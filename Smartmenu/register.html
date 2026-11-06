@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script>window.location.replace('index.html#register');</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Restaurant Onboarding – Smart Menu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="register-style.css" />
+</head>
+
+<body>
+  <div class="onboarding-container">
+    <!-- Left Sidebar -->
+    <aside class="onboarding-sidebar">
+      <div class="sidebar-content">
+        <div class="sidebar-header">
+          <a href="index.html" class="logo">
+            <div class="logo-icon">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="11" cy="11" r="10" fill="#E8531A" />
+                <path d="M7 8h8M7 11h5M7 14h7" stroke="#fff" stroke-width="1.5" stroke-linecap="round" />
+              </svg>
+            </div>
+            <span class="logo-text">smartmenu</span>
+          </a>
+        </div>
+
+        <div class="sidebar-main">
+          <div class="sidebar-badge">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="7" stroke="#E8531A" stroke-width="1.3" />
+              <path d="M5.5 8.5L7 10L10.5 6.5" stroke="#E8531A" stroke-width="1.3" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+            <span>RESTAURANT ONBOARDING</span>
+          </div>
+
+          <h1 class="sidebar-title">Set up your restaurant in a few thoughtful steps.</h1>
+
+          <div class="progress-steps">
+            <div class="progress-step" id="progress-step-1">
+              <div class="step-circle">
+                <span class="step-number">1</span>
+                <svg class="step-check" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path d="M3 7l3 3 5-6" stroke="#fff" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div class="step-text">
+                <div class="step-label">Owner account</div>
+                <div class="step-desc">Your admin login</div>
+              </div>
+            </div>
+
+            <div class="progress-step" id="progress-step-2">
+              <div class="step-circle">
+                <span class="step-number">2</span>
+                <svg class="step-check" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path d="M3 7l3 3 5-6" stroke="#fff" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div class="step-text">
+                <div class="step-label">Restaurant details</div>
+                <div class="step-desc">Tell us about your place</div>
+              </div>
+            </div>
+
+            <div class="progress-step" id="progress-step-3">
+              <div class="step-circle">
+                <span class="step-number">3</span>
+                <svg class="step-check" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path d="M3 7l3 3 5-6" stroke="#fff" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div class="step-text">
+                <div class="step-label">Select subscription</div>
+                <div class="step-desc">Choose your plan</div>
+              </div>
+            </div>
+
+            <div class="progress-step" id="progress-step-4">
+              <div class="step-circle">
+                <span class="step-number">4</span>
+                <svg class="step-check" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path d="M3 7l3 3 5-6" stroke="#fff" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div class="step-text">
+                <div class="step-label">Payment prototype</div>
+                <div class="step-desc">Review your order</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-footer">
+          <p>Need help? <a href="#">Chat with our setup team</a></p>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="onboarding-main">
+      <button class="exit-setup" onclick="window.location.href='index.html'">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+        </svg>
+        Exit setup
+      </button>
+
+      <!-- Step 1: Owner Account -->
+      <div class="step-content active" id="step-1">
+        <div class="step-header">
+          <div class="step-indicator">STEP 1 OF 4</div>
+          <h2 class="step-title">Create your owner account</h2>
+          <p class="step-subtitle">This will be your primary Smart Menu login.</p>
+        </div>
+
+        <form class="step-form" id="form-step-1">
+          <div class="form-group full-width">
+            <label for="owner-name">Owner full name</label>
+            <input type="text" id="owner-name" placeholder="e.g. Aarav Mehta" required />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="business-email">Business email</label>
+              <input type="email" id="business-email" placeholder="owner@restaurant.com" required />
+            </div>
+            <div class="form-group">
+              <label for="mobile-number">Mobile number</label>
+              <input type="tel" id="mobile-number" placeholder="+91 96765 43210" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" id="password" placeholder="At least 8 characters" required minlength="8" />
+            </div>
+            <div class="form-group">
+              <label for="confirm-password">Confirm password</label>
+              <input type="password" id="confirm-password" placeholder="Repeat your password" required />
+            </div>
+          </div>
+
+          <div class="form-group checkbox-group">
+            <input type="checkbox" id="terms-accept" required />
+            <label for="terms-accept">
+              I agree to the Terms of Service and Privacy Policy.
+            </label>
+          </div>
+          <div class="form-error" id="terms-error">Please accept the terms to continue.</div>
+
+          <button type="submit" class="btn-primary btn-lg btn-arrow">
+            Continue to restaurant details
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+        </form>
+      </div>
+
+      <!-- Step 2: Restaurant Details -->
+      <div class="step-content" id="step-2">
+        <div class="step-header">
+          <div class="step-indicator">STEP 2 OF 4</div>
+          <h2 class="step-title">Tell us about your restaurant</h2>
+          <p class="step-subtitle">These details help shape your public menu.</p>
+        </div>
+
+        <form class="step-form" id="form-step-2">
+          <div class="logo-upload-section">
+            <div class="logo-upload-wrapper">
+              <div class="logo-preview" id="logo-preview">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <circle cx="12" cy="12" r="10" stroke="#999" stroke-width="1.5" />
+                  <path d="M8 12h8M12 8v8" stroke="#999" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+              </div>
+              <div class="logo-upload-text">
+                <div class="logo-label">Restaurant logo</div>
+                <div class="logo-hint">Upload an image</div>
+              </div>
+            </div>
+            <button type="button" class="btn-upload" onclick="document.getElementById('logo-input').click()">
+              Upload logo
+            </button>
+            <input type="file" id="logo-input" accept="image/*" style="display: none;" />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="restaurant-name">Restaurant name</label>
+              <input type="text" id="restaurant-name" placeholder="Nara House" required />
+            </div>
+            <div class="form-group">
+              <label for="cuisine-category">Cuisine category</label>
+              <select id="cuisine-category" required>
+                <option value="">Modern Indian</option>
+                <option value="italian">Italian</option>
+                <option value="mediterranean">Mediterranean</option>
+                <option value="asian">Asian Fusion</option>
+                <option value="continental">Continental</option>
+                <option value="indian">Indian</option>
+                <option value="chinese">Chinese</option>
+                <option value="mexican">Mexican</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="description">Description</label>
+            <textarea id="description" rows="3" placeholder="A few words about your unique story..."
+              required></textarea>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="full-address">Full address</label>
+            <input type="text" id="full-address" placeholder="12 Residency Road" required />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="city">City</label>
+              <input type="text" id="city" placeholder="Bengaluru" required />
+            </div>
+            <div class="form-group">
+              <label for="postal-code">Postal code</label>
+              <input type="text" id="postal-code" placeholder="560025" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contact-number">Contact number</label>
+              <input type="tel" id="contact-number" placeholder="+91 123 456 7890" required />
+            </div>
+            <div class="form-group">
+              <label for="restaurant-email">Business email</label>
+              <input type="email" id="restaurant-email" placeholder="hello@restaurant.com" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="website">Website or social link</label>
+              <input type="url" id="website" placeholder="www.nara.in" />
+            </div>
+            <div class="form-group">
+              <label for="tables">Number of tables</label>
+              <input type="number" id="tables" placeholder="25" min="1" required />
+            </div>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="operating-hours">Operating hours</label>
+            <input type="text" id="operating-hours" placeholder="11:30-23:00" required />
+          </div>
+
+          <div class="form-actions">
+            <button type="button" class="btn-ghost" onclick="previousStep()">Back</button>
+            <button type="submit" class="btn-primary btn-arrow">
+              Continue to plans
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Step 3: Select Subscription -->
+      <div class="step-content" id="step-3">
+        <div class="step-header">
+          <div class="step-indicator">STEP 3 OF 4</div>
+          <h2 class="step-title">Choose your annual plan</h2>
+          <p class="step-subtitle">Your selected plan is highlighted. You can change it here.</p>
+        </div>
+
+        <form class="step-form" id="form-step-3">
+          <div class="pricing-cards">
+            <div class="pricing-card" data-plan="starter">
+              <div class="plan-radio">
+                <input type="radio" name="plan" id="plan-starter" value="starter" />
+                <label for="plan-starter"></label>
+              </div>
+              <div class="plan-details">
+                <div class="plan-name">Starter</div>
+                <div class="plan-desc">Small places · Excellent</div>
+              </div>
+              <div class="plan-price">₹[Price]</div>
+            </div>
+
+            <div class="pricing-card active" data-plan="growth">
+              <div class="plan-radio">
+                <input type="radio" name="plan" id="plan-growth" value="growth" checked />
+                <label for="plan-growth"></label>
+              </div>
+              <div class="plan-details">
+                <div class="plan-name">Growth</div>
+                <div class="plan-desc">Growing chains · Full features</div>
+              </div>
+              <div class="plan-price">₹[Price]</div>
+            </div>
+
+            <div class="pricing-card" data-plan="premium">
+              <div class="plan-radio">
+                <input type="radio" name="plan" id="plan-premium" value="premium" />
+                <label for="plan-premium"></label>
+              </div>
+              <div class="plan-details">
+                <div class="plan-name">Premium</div>
+                <div class="plan-desc">Established · On-demand</div>
+              </div>
+              <div class="plan-price">₹[Price]</div>
+            </div>
+          </div>
+
+          <div class="plan-info-table">
+            <div class="plan-info-row">
+              <span class="info-label">Billing frequency</span>
+              <span class="info-value">Annual</span>
+            </div>
+            <div class="plan-info-row">
+              <span class="info-label">Applicable taxes</span>
+              <span class="info-value">Calculated at checkout</span>
+            </div>
+            <div class="plan-info-row">
+              <span class="info-label">Total due</span>
+              <span class="info-value">₹[Annual Price] + taxes</span>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" class="btn-ghost" onclick="previousStep()">Back</button>
+            <button type="submit" class="btn-primary btn-arrow">
+              Continue payment
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Step 4: Payment Prototype -->
+      <div class="step-content" id="step-4">
+        <div class="step-header">
+          <div class="step-indicator">STEP 4 OF 4</div>
+          <h2 class="step-title">Review and continue</h2>
+          <p class="step-subtitle">The checkout is a prototype. No payment will be processed during this demonstration.
+          </p>
+        </div>
+
+        <div class="payment-notice">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <circle cx="10" cy="10" r="8" stroke="#D97706" stroke-width="1.5" />
+            <path d="M10 6v4M10 13v1" stroke="#D97706" stroke-width="1.5" stroke-linecap="round" />
+          </svg>
+          <div class="notice-text">
+            <strong>Payment gateway not connected.</strong>
+            <span>This screen simply represents where the final card-capture step would occur.</span>
+          </div>
+        </div>
+
+        <div class="payment-layout">
+          <form class="payment-form" id="form-step-4">
+            <div class="form-group full-width">
+              <label for="card-number">Card number</label>
+              <input type="text" id="card-number" placeholder="0000 0000 0000 0000" maxlength="19" />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="card-expiry">Expiry</label>
+                <input type="text" id="card-expiry" placeholder="MM / YY" maxlength="7" />
+              </div>
+              <div class="form-group">
+                <label for="card-cvv">CVV</label>
+                <input type="text" id="card-cvv" placeholder="123" maxlength="3" />
+              </div>
+            </div>
+
+            <div class="form-group full-width">
+              <label for="card-name">Name on card</label>
+              <input type="text" id="card-name" placeholder="Aarav Mehta" />
+            </div>
+
+            <div class="form-actions">
+              <button type="button" class="btn-ghost" onclick="previousStep()">Back</button>
+              <button type="submit" class="btn-primary btn-arrow">
+                Simulate confirmation
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </button>
+            </div>
+          </form>
+
+          <aside class="order-summary">
+            <h3 class="summary-title">Order summary</h3>
+            <div class="summary-row">
+              <span class="summary-label">Growth annual plan</span>
+              <span class="summary-value">₹[Growth Price]</span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-label">Taxes</span>
+              <span class="summary-value">₹[Tax]</span>
+            </div>
+            <div class="summary-divider"></div>
+            <div class="summary-row summary-total">
+              <span class="summary-label">Total payable</span>
+              <span class="summary-value">₹[Total]</span>
+            </div>
+            <p class="summary-note">All amounts are indicative. Pricing is refined during sign-in once billing location
+              is known.</p>
+          </aside>
+        </div>
+      </div>
+
+      <!-- Success Screen -->
+      <div class="step-content" id="step-success">
+        <div class="success-container">
+          <div class="success-icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+              <circle cx="24" cy="24" r="22" fill="#D4F4DD" stroke="#10B981" stroke-width="2" />
+              <path d="M16 24l6 6 10-12" stroke="#10B981" stroke-width="3" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </div>
+
+          <div class="success-badge">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="7" stroke="#E8531A" stroke-width="1.3" />
+              <path d="M5.5 8.5L7 10L10.5 6.5" stroke="#E8531A" stroke-width="1.3" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+            <span>PROTOTYPE COMPLETE</span>
+          </div>
+
+          <h2 class="success-title">Welcome to Smart Menu.</h2>
+          <p class="success-subtitle">Next, it's time to build the first digital AR menu. (No actual payment was
+            processed during this demonstration.)</p>
+
+          <div class="success-details">
+            <div class="detail-row">
+              <span class="detail-label">Restaurant</span>
+              <span class="detail-value" id="success-restaurant">Nara House</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Selected plan</span>
+              <span class="detail-value" id="success-plan">Growth · Annual</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Status</span>
+              <span class="detail-value detail-badge">Demo profile</span>
+            </div>
+          </div>
+
+          <button class="btn-primary btn-lg btn-arrow" onclick="window.location.href='dashboard.html'">
+            Set up my menu
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+
+          <p class="success-footer">Need help? <a href="#">Chat with our setup team</a></p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="register-script.js"></script>
+</body>
+
+</html>

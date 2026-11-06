@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Modal</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="register-style.css?v=234612">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .test-btn {
+            padding: 16px 32px;
+            background: #E8531A;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="test-btn" onclick="openModal()">Open Registration Modal</button>
+
+    <!-- Modal -->
+    <div class="registration-modal" id="test-modal">
+        <div class="modal-backdrop" onclick="closeModal()"></div>
+        <div class="onboarding-container modal-content">
+            <aside class="onboarding-sidebar">
+                <div class="sidebar-content">
+                    <div class="sidebar-header">
+                        <div class="logo">
+                            <div class="logo-icon">
+                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                    <circle cx="11" cy="11" r="10" fill="#E8531A" />
+                                    <path d="M7 8h8M7 11h5M7 14h7" stroke="#fff" stroke-width="1.5"
+                                        stroke-linecap="round" />
+                                </svg>
+                            </div>
+                            <span class="logo-text">smartmenu</span>
+                        </div>
+                    </div>
+                    <div class="sidebar-main">
+                        <div class="sidebar-badge">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <circle cx="8" cy="8" r="7" stroke="#E8531A" stroke-width="1.3" />
+                                <path d="M5.5 8.5L7 10L10.5 6.5" stroke="#E8531A" stroke-width="1.3"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <span>RESTAURANT ONBOARDING</span>
+                        </div>
+                        <h1 class="sidebar-title">Set up your restaurant in a few thoughtful steps.</h1>
+                    </div>
+                </div>
+            </aside>
+
+            <main class="onboarding-main">
+                <button class="exit-setup" onclick="closeModal()">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                        <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" />
+                    </svg>
+                    Exit setup
+                </button>
+
+                <div class="step-content active">
+                    <div class="step-header">
+                        <div class="step-indicator">STEP 1 OF 4</div>
+                        <h2 class="step-title">Create your owner account</h2>
+                        <p class="step-subtitle">This will be your primary Smart Menu login.</p>
+                    </div>
+
+                    <form class="step-form">
+                        <div class="form-group full-width">
+                            <label for="owner-name">Owner full name</label>
+                            <input type="text" id="owner-name" placeholder="e.g. Aarav Mehta" required />
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="business-email">Business email</label>
+                                <input type="email" id="business-email" placeholder="owner@restaurant.com" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="mobile-number">Mobile number</label>
+                                <input type="tel" id="mobile-number" placeholder="+91 96765 43210" required />
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" id="password" placeholder="At least 8 characters" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="confirm-password">Confirm password</label>
+                                <input type="password" id="confirm-password" placeholder="Repeat your password"
+                                    required />
+                            </div>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="terms-accept" required />
+                            <label for="terms-accept">I agree to the Terms of Service and Privacy Policy.</label>
+                        </div>
+
+                        <button type="submit" class="btn-primary btn-lg btn-arrow">
+                            Continue to restaurant details
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            const modal = document.getElementById('test-modal');
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            console.log('Modal opened');
+        }
+        function closeModal() {
+            const modal = document.getElementById('test-modal');
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+            console.log('Modal closed');
+        }
+    </script>
+</body>
+
+</html>

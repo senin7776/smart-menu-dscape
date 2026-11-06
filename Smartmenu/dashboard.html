@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script>window.location.replace('index.html#dashboard');</script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard – Smart Menu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .dashboard-placeholder {
+            max-width: 600px;
+            text-align: center;
+            background: #fff;
+            padding: 60px 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 32px;
+        }
+
+        .logo-icon svg {
+            display: block;
+        }
+
+        .logo-text {
+            font-size: 22px;
+            font-weight: 700;
+            color: #2C2C2C;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 700;
+            color: #2C2C2C;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        p {
+            font-size: 18px;
+            color: #6B7280;
+            line-height: 1.6;
+            margin-bottom: 32px;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 16px 32px;
+            font-size: 16px;
+            font-weight: 600;
+            background: #E8531A;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: #D14817;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(232, 83, 26, 0.3);
+        }
+
+        .coming-soon {
+            display: inline-block;
+            padding: 8px 16px;
+            background: #FEF3C7;
+            color: #92400E;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            letter-spacing: 0.05em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dashboard-placeholder">
+        <a href="index.html" class="logo">
+            <div class="logo-icon">
+                <svg width="26" height="26" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="11" cy="11" r="10" fill="#E8531A" />
+                    <path d="M7 8h8M7 11h5M7 14h7" stroke="#fff" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+            </div>
+            <span class="logo-text">smartmenu</span>
+        </a>
+
+        <div class="coming-soon">🚀 COMING SOON</div>
+
+        <h1>Dashboard under construction</h1>
+        <p>The dashboard is being built and will be available soon. You've successfully completed the onboarding
+            prototype!</p>
+
+        <a href="index.html" class="btn-primary">
+            ← Back to home
+        </a>
+    </div>
+</body>
+
+</html>

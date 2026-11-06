@@ -1,0 +1,3281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartMenu – Your Menu, Reimagined in AR</title>
+  <meta name="description"
+    content="Give guests a lifelike preview of every dish. Create a beautiful digital menu and help every customer order with confidence." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="register-style.css?v=figma_final" />
+  <link rel="stylesheet" href="dashboard-style.css?v=figma_final" />
+</head>
+
+<body>
+
+  <div id="landing-view">
+<!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="logo" id="logo-link">
+        <div class="logo-icon">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="11" cy="11" r="10" fill="#E8531A" />
+            <path d="M7 8h8M7 11h5M7 14h7" stroke="#fff" stroke-width="1.5" stroke-linecap="round" />
+          </svg>
+        </div>
+        <span class="logo-text">smartmenu</span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#how-it-works" class="nav-link">How it works</a></li>
+        <li><a href="#features" class="nav-link">Features</a></li>
+        <li><a href="#restaurants" class="nav-link">Restaurants</a></li>
+        <li><a href="#pricing" class="nav-link">Pricing</a></li>
+        <li><a href="#login" class="nav-link" id="nav-login-btn" onclick="openLoginModal(); return false;">Log in</a></li>
+      </ul>
+      <a href="#register" class="btn-primary" id="nav-register-btn" onclick="openRegistrationModal(1); return false;">Register your restaurant →</a>
+    </div>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero" id="home">
+    <div class="hero-left">
+      <div class="badge" id="hero-badge">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <circle cx="7" cy="7" r="6" stroke="#E8531A" stroke-width="1.2" />
+          <path d="M4.5 7.5L6 9L9.5 5.5" stroke="#E8531A" stroke-width="1.2" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+        <span>THE NEW STANDARD FOR MODERN DINING</span>
+      </div>
+
+      <h1 class="hero-headline" id="hero-headline">
+        Your menu,<br />
+        reimagined in<br />
+        <em class="hero-ar">AR.</em>
+      </h1>
+
+      <p class="hero-subtext" id="hero-subtext">
+        Give guests a lifelike preview of every dish. Create a<br />
+        beautiful digital menu and help every customer order with<br />
+        confidence.
+      </p>
+
+      <div class="hero-actions" id="hero-actions">
+        <a href="#register" class="btn-primary btn-lg" id="get-started-btn" onclick="openRegistrationModal(1); return false;">Get started →</a>
+        <a href="#ar-demo" class="btn-ghost btn-lg" id="explore-ar-btn">Explore AR menu</a>
+      </div>
+
+      <div class="hero-trust" id="hero-trust">
+        <span class="trust-item">✓ No app needed</span>
+        <span class="trust-item">✓ QR-code access</span>
+        <span class="trust-item">✓ Instant updates</span>
+      </div>
+    </div>
+
+    <div class="hero-right" id="hero-right">
+      <!-- Restaurant image (arched) -->
+      <div class="hero-restaurant-img" id="hero-restaurant-img">
+        <img src="restaurant_interior.png" alt="Elegant restaurant interior" />
+      </div>
+
+      <!-- Phone mockup -->
+      <div class="hero-phone" id="hero-phone">
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="phone-ar-badge">● AR preview</div>
+            <img src="saffron_butter_chicken.png" alt="Saffron Butter Chicken AR preview" class="phone-food-img" />
+            <div class="phone-dish-card">
+              <span class="phone-dish-label">CHEF'S SPECIAL</span>
+              <h3 class="phone-dish-name">Saffron Butter Chicken</h3>
+              <p class="phone-dish-price">₹580</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Floating badge -->
+      <div class="hero-float-badge" id="hero-float-badge">
+        <div class="float-badge-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <rect x="2" y="2" width="16" height="16" rx="4" stroke="#2C2C2C" stroke-width="1.3" />
+            <path d="M6 10h8M10 6v8" stroke="#2C2C2C" stroke-width="1.3" stroke-linecap="round" />
+          </svg>
+        </div>
+        <div class="float-badge-text">
+          <strong>True-to-life dishes</strong>
+          <span>View from every angle</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RESTAURANTS MARQUEE ===== -->
+  <section class="marquee-section" id="restaurants">
+    <div class="marquee-label">BUILT FOR EXCEPTIONAL RESTAURANTS</div>
+    <div class="marquee-names">
+      <span>Sage &amp; Stone</span>
+      <span>NARA</span>
+      <span>Maison 42</span>
+      <span>TAMARIND</span>
+      <span>Sage &amp; Stone</span>
+      <span>NARA</span>
+      <span>Maison 42</span>
+      <span>TAMARIND</span>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="section-header-split">
+      <div class="section-left">
+        <div class="section-badge" id="hiw-badge">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <circle cx="7" cy="7" r="6" stroke="#E8531A" stroke-width="1.2" />
+            <path d="M5 7l1.5 1.5L9 5" stroke="#E8531A" stroke-width="1.2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+          <span>SIMPLE BY DESIGN</span>
+        </div>
+        <h2 class="section-title" id="hiw-title">
+          From kitchen to camera<br />in three easy steps.
+        </h2>
+      </div>
+      <div class="section-right">
+        <p class="section-desc" id="hiw-desc">Everything you need to launch an interactive dining experience—without
+          technical complexity.</p>
+      </div>
+    </div>
+
+    <div class="steps-grid" id="steps-grid">
+      <!-- Step 1 -->
+      <div class="step-card step-mint" id="hiw-step-1">
+        <div class="step-top">
+          <div class="step-icon">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+              <path d="M11 3v6M8 9h6M5 13h12M6 17h10" stroke="#2C2C2C" stroke-width="1.4" stroke-linecap="round" />
+            </svg>
+          </div>
+          <span class="step-number">01</span>
+        </div>
+        <div class="step-body">
+          <h3 class="step-title">Register your restaurant</h3>
+          <p class="step-desc">Create your account, select an annual plan, and add your restaurant details.</p>
+          <a href="#" class="step-link" id="step-1-link">Learn more →</a>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="step-card step-peach" id="hiw-step-2">
+        <div class="step-top">
+          <div class="step-icon">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+              <circle cx="11" cy="11" r="8" stroke="#2C2C2C" stroke-width="1.4" />
+              <path d="M8 11c0-1.657 1.343-3 3-3s3 1.343 3 3-1.343 3-3 3" stroke="#2C2C2C" stroke-width="1.4"
+                stroke-linecap="round" />
+            </svg>
+          </div>
+          <span class="step-number">02</span>
+        </div>
+        <div class="step-body">
+          <h3 class="step-title">Build your digital menu</h3>
+          <p class="step-desc">Choose your look, add dishes and photography, then make it unmistakably yours.</p>
+          <a href="#" class="step-link" id="step-2-link">Learn more →</a>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="step-card step-dark" id="hiw-step-3">
+        <div class="step-top">
+          <div class="step-icon step-icon-dark">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+              <rect x="3" y="3" width="16" height="16" rx="4" stroke="#fff" stroke-width="1.4" />
+              <path d="M8 11h6M11 8v6" stroke="#fff" stroke-width="1.4" stroke-linecap="round" />
+            </svg>
+          </div>
+          <span class="step-number step-number-dark">03</span>
+        </div>
+        <div class="step-body">
+          <h3 class="step-title step-title-dark">Let guests explore in AR</h3>
+          <p class="step-desc step-desc-dark">Display your QR code and let guests discover every dish—no app required.
+          </p>
+          <a href="#" class="step-link step-link-dark" id="step-3-link">Learn more →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURES SECTION ===== -->
+  <section class="features" id="features">
+    <div class="features-inner">
+      <div class="features-header" id="features-header">
+        <div class="section-badge section-badge-light" id="features-badge">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <circle cx="7" cy="7" r="6" stroke="#E8531A" stroke-width="1.2" />
+            <path d="M5 7l1.5 1.5L9 5" stroke="#E8531A" stroke-width="1.2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+          <span>EVERYTHING IN ONE PLACE</span>
+        </div>
+        <div class="features-title-row">
+          <h2 class="features-title" id="features-title">
+            Designed for hospitality.<br />Built for growth.
+          </h2>
+          <p class="features-subtitle" id="features-subtitle">
+            Powerful tools that feel refreshingly simple, from your first upload to your thousandth menu view.
+          </p>
+        </div>
+      </div>
+
+      <div class="features-grid" id="features-grid">
+        <!-- Big feature card -->
+        <div class="feature-card feature-big" id="feature-ar">
+          <div class="feature-card-icon">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+              <rect x="3" y="3" width="16" height="16" rx="4" stroke="#ccc" stroke-width="1.4" />
+              <path d="M8 11h6M11 8v6" stroke="#ccc" stroke-width="1.4" stroke-linecap="round" />
+            </svg>
+          </div>
+          <h3 class="feature-card-title">AR food visualization</h3>
+          <p class="feature-card-desc">Let guests see scale, detail, and presentation before they order.</p>
+          <div class="feature-img-wrapper">
+            <img src="farfalle_pasta_ar.png" alt="AR food visualization" class="feature-food-img" />
+            <div class="feature-place-btn">Place on table</div>
+          </div>
+        </div>
+
+        <!-- Right column small cards -->
+        <div class="feature-right-col" id="feature-right-col">
+          <div class="feature-card feature-small" id="feature-themes">
+            <div class="feature-card-icon">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <circle cx="11" cy="11" r="8" stroke="#ccc" stroke-width="1.4" />
+                <path d="M8 11c0-1.657 1.343-3 3-3s3 1.343 3 3-1.343 3-3 3" stroke="#ccc" stroke-width="1.4"
+                  stroke-linecap="round" />
+              </svg>
+            </div>
+            <h3 class="feature-card-title">Beautiful themes</h3>
+            <p class="feature-card-desc">Curated, customizable themes for every restaurant identity.</p>
+          </div>
+          <div class="feature-card feature-small" id="feature-qr">
+            <div class="feature-card-icon">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <rect x="3" y="3" width="7" height="7" rx="1" stroke="#ccc" stroke-width="1.3" />
+                <rect x="12" y="3" width="7" height="7" rx="1" stroke="#ccc" stroke-width="1.3" />
+                <rect x="3" y="12" width="7" height="7" rx="1" stroke="#ccc" stroke-width="1.3" />
+                <rect x="12" y="12" width="7" height="7" rx="1" stroke="#ccc" stroke-width="1.3" />
+              </svg>
+            </div>
+            <h3 class="feature-card-title">Instant QR access</h3>
+            <p class="feature-card-desc">One scan opens your fast, mobile-first customer menu.</p>
+          </div>
+          <div class="feature-card feature-small" id="feature-updates">
+            <div class="feature-card-icon">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <path d="M11 3v6M8 9h6M5 13h12M6 17h10" stroke="#ccc" stroke-width="1.3" stroke-linecap="round" />
+              </svg>
+            </div>
+            <h3 class="feature-card-title">Effortless menu updates</h3>
+            <p class="feature-card-desc">Publish seasonal changes across all locations in seconds.</p>
+          </div>
+          <div class="feature-card feature-small" id="feature-insights">
+            <div class="feature-card-icon">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <rect x="3" y="3" width="7" height="7" rx="1" stroke="#ccc" stroke-width="1.3" />
+                <rect x="12" y="3" width="7" height="7" rx="1" stroke="#ccc" stroke-width="1.3" />
+                <rect x="3" y="12" width="7" height="7" rx="1" stroke="#ccc" stroke-width="1.3" />
+                <rect x="12" y="12" width="7" height="7" rx="1" stroke="#ccc" stroke-width="1.3" />
+              </svg>
+            </div>
+            <h3 class="feature-card-title">Actionable insights</h3>
+            <p class="feature-card-desc">Understand popular dishes and customer engagement.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== AR DEMO SECTION ===== -->
+  <section class="ar-demo" id="ar-demo">
+    <div class="ar-demo-inner">
+      <div class="ar-demo-left" id="ar-demo-left">
+        <div class="section-badge" id="ar-badge">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <circle cx="7" cy="7" r="6" stroke="#E8531A" stroke-width="1.2" />
+            <path d="M5 7l1.5 1.5L9 5" stroke="#E8531A" stroke-width="1.2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+          <span>TRY THE EXPERIENCE</span>
+        </div>
+        <h2 class="ar-demo-title" id="ar-demo-title">
+          A menu you can<br />almost taste.
+        </h2>
+        <p class="ar-demo-desc" id="ar-demo-desc">
+          Select a dish and see how Smart Menu turns browsing into a moment of discovery.
+        </p>
+
+        <div class="ar-menu-list" id="ar-menu-list">
+          <div class="ar-menu-item active" id="ar-item-1" onclick="selectDish(0)">
+            <img src="saffron_butter_chicken.png" alt="Saffron Butter Chicken" class="menu-thumb" />
+            <div class="menu-item-info">
+              <h4>Saffron Butter Chicken</h4>
+              <span class="menu-tag">Chef's Specials</span>
+            </div>
+            <span class="menu-price">₹580</span>
+          </div>
+          <div class="ar-menu-item" id="ar-item-2" onclick="selectDish(1)">
+            <img src="wild_mushroom_pasta.png" alt="Wild Mushroom Pasta" class="menu-thumb" />
+            <div class="menu-item-info">
+              <h4>Wild Mushroom Pasta</h4>
+              <span class="menu-tag">Mains</span>
+            </div>
+            <span class="menu-price">₹460</span>
+          </div>
+          <div class="ar-menu-item" id="ar-item-3" onclick="selectDish(2)">
+            <img src="garden_burrata_bowl.png" alt="Garden Burrata Bowl" class="menu-thumb" />
+            <div class="menu-item-info">
+              <h4>Garden Burrata Bowl</h4>
+              <span class="menu-tag">Small plates</span>
+            </div>
+            <span class="menu-price">₹390</span>
+          </div>
+        </div>
+
+        <button class="btn-primary btn-lg" id="preview-ar-btn" onclick="previewAR()">Preview in AR ✦</button>
+        <p class="ar-disclaimer">Interactive simulation · Actual AR requires a compatible device and 3D asset.</p>
+      </div>
+
+      <div class="ar-demo-right" id="ar-demo-right">
+        <div class="ar-phone-container">
+          <div class="ar-arch-bg"></div>
+          <div class="ar-phone-frame" id="ar-phone-frame">
+            <div class="ar-phone-notch"></div>
+            <div class="ar-phone-screen">
+              <img src="saffron_butter_chicken.png" alt="AR Preview" class="ar-phone-img" id="ar-phone-img" />
+              <div class="ar-dotted-circle"></div>
+              <div class="ar-info-card" id="ar-info-card">
+                <div class="ar-info-label">AR PREVIEW</div>
+                <h3 id="ar-dish-name">Saffron Butter Chicken</h3>
+                <div class="ar-info-bottom">
+                  <span id="ar-dish-price">₹580</span>
+                  <button class="ar-place-btn" id="ar-place-btn">Place on table</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RESTAURANT STORIES ===== -->
+  <section class="restaurant-stories" id="restaurant-stories">
+    <div class="stories-inner">
+      <div class="stories-header" id="stories-header">
+        <div class="stories-header-left">
+          <div class="section-badge" id="stories-badge">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <circle cx="7" cy="7" r="6" stroke="#E8531A" stroke-width="1.2" />
+              <path d="M5 7l1.5 1.5L9 5" stroke="#E8531A" stroke-width="1.2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+            <span>RESTAURANT STORIES</span>
+          </div>
+          <h2 class="stories-title" id="stories-title">Made for every table.</h2>
+        </div>
+        <div class="stories-header-right">
+          <a href="#" class="btn-ghost" id="partner-btn">Become a Smart Menu partner</a>
+        </div>
+      </div>
+
+      <div class="stories-grid" id="stories-grid">
+        <!-- Card 1: Nara House -->
+        <div class="story-card" id="story-1">
+          <div class="story-img-wrap">
+            <div class="story-business-badge">SAMPLE BUSINESS</div>
+            <img src="nara_house_curry.png" alt="Nara House – Modern Indian cuisine" class="story-img" />
+          </div>
+          <div class="story-footer">
+            <div class="story-info">
+              <div class="story-avatar">N</div>
+              <div class="story-text">
+                <h4>Nara House</h4>
+                <span>Modern Indian · Bengaluru</span>
+              </div>
+            </div>
+            <a href="#" class="story-arrow" id="story-1-link" aria-label="View Nara House">→</a>
+          </div>
+        </div>
+
+        <!-- Card 2: Olive & Ember -->
+        <div class="story-card" id="story-2">
+          <div class="story-img-wrap">
+            <div class="story-business-badge">SAMPLE BUSINESS</div>
+            <img src="olive_ember_salad.png" alt="Olive & Ember – Mediterranean cuisine" class="story-img" />
+          </div>
+          <div class="story-footer">
+            <div class="story-info">
+              <div class="story-avatar story-avatar-olive">O</div>
+              <div class="story-text">
+                <h4>Olive &amp; Ember</h4>
+                <span>Mediterranean · Mumbai</span>
+              </div>
+            </div>
+            <a href="#" class="story-arrow" id="story-2-link" aria-label="View Olive and Ember">→</a>
+          </div>
+        </div>
+
+        <!-- Card 3: Casa Farina -->
+        <div class="story-card" id="story-3">
+          <div class="story-img-wrap">
+            <div class="story-business-badge">SAMPLE BUSINESS</div>
+            <img src="casa_farina_pasta.png" alt="Casa Farina – Italian cuisine" class="story-img" />
+          </div>
+          <div class="story-footer">
+            <div class="story-info">
+              <div class="story-avatar story-avatar-casa">C</div>
+              <div class="story-text">
+                <h4>Casa Farina</h4>
+                <span>Italian · New Delhi</span>
+              </div>
+            </div>
+            <a href="#" class="story-arrow" id="story-3-link" aria-label="View Casa Farina">→</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="testimonials" id="testimonials">
+    <div class="testimonials-inner">
+      <div class="testimonials-header" id="testimonials-header">
+        <div class="testimonials-header-left">
+          <div class="section-badge" id="testimonials-badge">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <circle cx="7" cy="7" r="6" stroke="#E8531A" stroke-width="1.2" />
+              <path d="M5 7l1.5 1.5L9 5" stroke="#E8531A" stroke-width="1.2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+            <span>ILLUSTRATIVE STORIES</span>
+          </div>
+          <h2 class="testimonials-title" id="testimonials-title">
+            Loved by teams<br />who care about detail.
+          </h2>
+        </div>
+        <div class="testimonials-header-right">
+          <p class="testimonials-disclaimer">
+            Sample testimonials shown for demonstration only. These are fictional owners, not verified customer reviews.
+          </p>
+        </div>
+      </div>
+
+      <div class="testimonials-grid" id="testimonials-grid">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card" id="testimonial-1">
+          <div class="quote-mark">"</div>
+          <blockquote class="testimonial-quote">
+            "Guests ask fewer questions and feel more certain. The menu has become part of the experience."
+          </blockquote>
+          <div class="testimonial-author">
+            <strong>Aarav Mehta</strong>
+            <span>Owner, Nara House</span>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card" id="testimonial-2">
+          <div class="quote-mark">"</div>
+          <blockquote class="testimonial-quote">
+            "We update weekend specials in minutes and the menu always looks exactly like our brand."
+          </blockquote>
+          <div class="testimonial-author">
+            <strong>Mira Shah</strong>
+            <span>Founder, Olive &amp; Ember</span>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="testimonial-card" id="testimonial-3">
+          <div class="quote-mark">"</div>
+          <blockquote class="testimonial-quote">
+            "The AR preview gives our signature dishes the theatre they deserve."
+          </blockquote>
+          <div class="testimonial-author">
+            <strong>Rohan Kapoor</strong>
+            <span>Chef-owner, Casa Farina</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA BANNER ===== -->
+  <section class="cta-section" id="pricing">
+    <div class="cta-inner">
+      <div class="cta-card" id="cta-card">
+        <div class="cta-left">
+          <div class="section-badge" id="cta-badge">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <circle cx="7" cy="7" r="6" stroke="#E8531A" stroke-width="1.2" />
+              <path d="M5 7l1.5 1.5L9 5" stroke="#E8531A" stroke-width="1.2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+            <span>YOUR MENU, ELEVATED</span>
+          </div>
+          <h2 class="cta-title" id="cta-title">
+            Ready to give your menu<br />a new dimension?
+          </h2>
+          <p class="cta-desc">Join the next generation of restaurant experiences.</p>
+          <div class="cta-actions">
+            <a href="#register" class="btn-primary btn-lg" id="cta-subscribe-btn" onclick="openRegistrationModal(1); return false;">Start your subscription →</a>
+            <a href="#" class="btn-ghost btn-lg cta-ghost" id="cta-pricing-btn">View pricing</a>
+          </div>
+        </div>
+        <div class="cta-right" id="cta-right">
+          <!-- Concentric circles graphic -->
+          <div class="cta-circles" id="cta-circles">
+            <div class="cta-circle cta-circle-3"></div>
+            <div class="cta-circle cta-circle-2"></div>
+            <div class="cta-circle cta-circle-1"></div>
+            <div class="cta-icon-center">
+              <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+                <path d="M15 5v9M11 9h8M7 18h16M8 23h14" stroke="#4A5E45" stroke-width="1.8" stroke-linecap="round" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" id="footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#" class="logo footer-logo" id="footer-logo">
+            <div class="logo-icon">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <circle cx="11" cy="11" r="10" fill="#E8531A" />
+                <path d="M7 8h8M7 11h5M7 14h7" stroke="#fff" stroke-width="1.5" stroke-linecap="round" />
+              </svg>
+            </div>
+            <span class="logo-text footer-logo-text">smartmenu</span>
+          </a>
+          <p class="footer-tagline">See your food before you order.</p>
+        </div>
+        <nav class="footer-nav" id="footer-nav" aria-label="Footer navigation">
+          <a href="#" class="footer-link" id="footer-about">About</a>
+          <a href="#features" class="footer-link" id="footer-features">Features</a>
+          <a href="#pricing" class="footer-link" id="footer-pricing">Pricing</a>
+          <a href="#" class="footer-link" id="footer-contact">Contact</a>
+          <a href="#" class="footer-link" id="footer-privacy">Privacy</a>
+          <a href="#" class="footer-link" id="footer-terms">Terms</a>
+          <a href="#login" class="footer-link" id="footer-login" onclick="openLoginModal(); return false;">Login</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 Smart Menu. Demo product.</p>
+      </div>
+    </div>
+  </footer>
+  </div>
+
+
+  <!-- ===== LOGIN MODAL ===== -->
+  <div class="login-overlay" id="login-modal" onclick="if(event.target===this)closeLoginModal()">
+    <div class="login-card-container">
+      <div class="login-banner-side">
+        <img src="restaurant_interior.png" alt="Restaurant Interior" class="bg-art" />
+        <div class="login-banner-content">
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 24px;">
+            <svg width="24" height="24" viewBox="0 0 22 22" fill="none">
+              <circle cx="11" cy="11" r="10" fill="#E8531A" />
+              <path d="M7 8h8M7 11h5M7 14h7" stroke="#fff" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+            <span style="font-weight: 700; letter-spacing: -0.3px; color: #fff; font-size: 18px;">smartmenu</span>
+          </div>
+          <div style="font-size: 11px; font-weight: 700; letter-spacing: 1.5px; color: #E8531A; margin-bottom: 8px;">RESTAURANT PORTAL</div>
+          <h2 class="login-banner-title">Welcome back to your smart menu.</h2>
+          <p style="font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.6;">Manage your digital dishes, preview AR table standees, and review guest scan analytics.</p>
+        </div>
+        <div style="position: relative; z-index: 2; font-size: 12px; color: rgba(255,255,255,0.5);">
+          © 2026 Smart Menu Inc. All rights reserved.
+        </div>
+      </div>
+
+      <div class="login-form-side">
+        <button class="login-close-btn" onclick="closeLoginModal()" title="Close">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M4 4l10 10M14 4L4 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+          </svg>
+        </button>
+
+        <h3 style="font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: #111827; margin-bottom: 6px;">Sign in</h3>
+        <p style="font-size: 13.5px; color: #6B7280; margin-bottom: 24px;">Access your restaurant dashboard.</p>
+
+        <form id="login-modal-form" onsubmit="handleLoginSubmit(event)">
+          <div class="form-group full-width" style="margin-bottom: 16px;">
+            <label for="login-email-input" style="font-size: 13px; font-weight: 600; color: #374151; display: block; margin-bottom: 6px;">Business email</label>
+            <input type="email" id="login-email-input" placeholder="owner@restaurant.com" required style="width: 100%; padding: 12px 14px; border: 1px solid #D1D5DB; border-radius: 10px; font-size: 14px;" />
+          </div>
+
+          <div class="form-group full-width" style="margin-bottom: 16px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+              <label for="login-pass-input" style="font-size: 13px; font-weight: 600; color: #374151;">Password</label>
+              <a href="#" onclick="alert('Password reset link sent to registered email.'); return false;" style="font-size: 12px; color: #E8531A; text-decoration: none;">Forgot?</a>
+            </div>
+            <input type="password" id="login-pass-input" placeholder="••••••••" required style="width: 100%; padding: 12px 14px; border: 1px solid #D1D5DB; border-radius: 10px; font-size: 14px;" />
+          </div>
+
+          <div id="login-error-msg" style="display: none; padding: 10px 14px; background: #FEF2F2; color: #991B1B; border: 1px solid #FCA5A5; border-radius: 8px; font-size: 13px; margin-bottom: 16px; line-height: 1.4;"></div>
+
+          <button type="submit" id="login-submit-btn" class="btn-primary full-width" style="padding: 14px; border-radius: 10px; font-size: 15px; font-weight: 600; justify-content: center; width: 100%;">
+            Sign in to Dashboard →
+          </button>
+        </form>
+
+        <div style="margin-top: 14px; padding: 10px 14px; background: #F8F5EE; border-radius: 8px; font-size: 12px; color: #6B7280; text-align: center;">
+          🔒 Secure Access: Only registered restaurant accounts can access the dashboard.
+        </div>
+
+        <div style="margin-top: 24px; text-align: center; font-size: 13px; color: #6B7280;">
+          New restaurant? <a href="#register" onclick="closeLoginModal(); openRegistrationModal(event); return false;" style="color: #E8531A; font-weight: 600; text-decoration: none;">Register here →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== REGISTRATION MODAL (FIGMA REPLICATION) ===== -->
+  <div class="registration-modal" id="registration-modal">
+    <div class="modal-backdrop" onclick="closeRegistrationModal()"></div>
+    <div class="onboarding-modal-wrapper modal-content">
+      <!-- Full-Width White Top Bar (as in Figma) -->
+      <header class="onboarding-top-bar">
+        <a href="#" class="logo" onclick="closeRegistrationModal(); return false;">
+          <div class="logo-icon">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="11" cy="11" r="10" fill="#E8531A" />
+              <path d="M7 8h8M7 11h5M7 14h7" stroke="#fff" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+          </div>
+          <span class="logo-text">smartmenu</span>
+        </a>
+
+        <button class="exit-setup-btn" onclick="closeRegistrationModal()">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+            <path d="M1 1l10 10M11 1L1 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+          </svg>
+          <span>Exit setup</span>
+        </button>
+      </header>
+
+      <!-- Split Layout Below Top Bar -->
+      <div class="onboarding-split-layout">
+        <!-- Left Sidebar -->
+        <aside class="onboarding-sidebar">
+          <div class="sidebar-badge">
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="7" stroke="#E8531A" stroke-width="1.3" />
+              <path d="M5.5 8.5L7 10L10.5 6.5" stroke="#E8531A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <span>RESTAURANT ONBOARDING</span>
+          </div>
+
+          <h1 class="sidebar-title">Set up your restaurant in a few thoughtful steps.</h1>
+
+          <div class="progress-steps">
+            <!-- Step 1 in Sidebar -->
+            <div class="progress-step active" id="progress-step-1">
+              <div class="step-circle">
+                <span class="step-number">1</span>
+                <svg class="step-check" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path d="M3 7l3 3 5-6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div class="step-text">
+                <div class="step-label">Owner account</div>
+                <div class="step-desc">Your secure login</div>
+              </div>
+            </div>
+
+            <!-- Step 2 in Sidebar -->
+            <div class="progress-step" id="progress-step-2">
+              <div class="step-circle">
+                <span class="step-number">2</span>
+                <svg class="step-check" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path d="M3 7l3 3 5-6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div class="step-text">
+                <div class="step-label">Restaurant details</div>
+                <div class="step-desc">Tell us about your place</div>
+              </div>
+            </div>
+
+            <!-- Step 3 in Sidebar -->
+            <div class="progress-step" id="progress-step-3">
+              <div class="step-circle">
+                <span class="step-number">3</span>
+                <svg class="step-check" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path d="M3 7l3 3 5-6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div class="step-text">
+                <div class="step-label">Select subscription</div>
+                <div class="step-desc">Choose annual access</div>
+              </div>
+            </div>
+
+            <!-- Step 4 in Sidebar -->
+            <div class="progress-step" id="progress-step-4">
+              <div class="step-circle">
+                <span class="step-number">4</span>
+                <svg class="step-check" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path d="M3 7l3 3 5-6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div class="step-text">
+                <div class="step-label">Payment prototype</div>
+                <div class="step-desc">Review your order</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sidebar-footer">
+            Need help? <a href="#" onclick="alert('Concierge setup support connected.'); return false;">Chat with our setup team</a>
+          </div>
+        </aside>
+
+        <!-- Right Main Content Area -->
+        <main class="onboarding-main">
+          <!-- STEP 1 (Figma Image 1) -->
+          <div class="step-content active" id="step-1">
+            <div class="step-header">
+              <div class="step-indicator">STEP 1 OF 4</div>
+              <h2 class="step-title">Create your owner account</h2>
+              <p class="step-subtitle">This will be your primary Smart Menu login.</p>
+            </div>
+
+            <form class="step-form" id="form-step-1">
+              <div class="form-group full-width">
+                <label for="owner-name">Owner full name</label>
+                <input type="text" id="owner-name" placeholder="e.g. Aarav Mehta" required />
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="business-email">Business email</label>
+                  <input type="email" id="business-email" placeholder="owner@restaurant.com" required />
+                </div>
+                <div class="form-group">
+                  <label for="mobile-number">Mobile number</label>
+                  <input type="tel" id="mobile-number" placeholder="+91 98765 43210" required />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" id="password" placeholder="At least 8 characters" required minlength="8" />
+                </div>
+                <div class="form-group">
+                  <label for="confirm-password">Confirm password</label>
+                  <input type="password" id="confirm-password" placeholder="Repeat your password" required />
+                </div>
+              </div>
+
+              <div class="form-group checkbox-group">
+                <input type="checkbox" id="terms-accept" required />
+                <label for="terms-accept">
+                  I agree to the Terms of Service and Privacy Policy.
+                </label>
+              </div>
+              <div class="form-error" id="terms-error">Please accept the terms to continue.</div>
+
+              <div class="form-actions-row">
+                <button type="submit" class="btn-primary btn-pill">
+                  Continue to restaurant details
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- STEP 2 (Figma Image 2) -->
+          <div class="step-content" id="step-2">
+            <div class="step-header">
+              <div class="step-indicator">STEP 2 OF 4</div>
+              <h2 class="step-title">Tell us about your restaurant</h2>
+              <p class="step-subtitle">These details help shape your public menu.</p>
+            </div>
+
+            <form class="step-form" id="form-step-2">
+              <div class="logo-upload-card">
+                <div class="logo-upload-left">
+                  <div class="logo-avatar-preview" id="logo-preview">
+                    <span>N</span>
+                  </div>
+                  <div>
+                    <div class="logo-meta-title">Restaurant logo</div>
+                    <div class="logo-meta-hint">PNG or JPG up to 5MB</div>
+                  </div>
+                </div>
+                <button type="button" class="btn-upload-logo" onclick="document.getElementById('logo-input').click()">
+                  Upload logo
+                </button>
+                <input type="file" id="logo-input" accept="image/*" style="display: none;" />
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="restaurant-name">Restaurant name</label>
+                  <input type="text" id="restaurant-name" placeholder="Nara House" value="Nara House" required />
+                </div>
+                <div class="form-group">
+                  <label for="cuisine-category">Cuisine category</label>
+                  <select id="cuisine-category" required>
+                    <option value="Modern Indian" selected>Modern Indian</option>
+                    <option value="Italian">Italian</option>
+                    <option value="Mediterranean">Mediterranean</option>
+                    <option value="Asian Fusion">Asian Fusion</option>
+                    <option value="Continental">Continental</option>
+                    <option value="Indian">Indian</option>
+                    <option value="Chinese">Chinese</option>
+                    <option value="Mexican">Mexican</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group full-width">
+                <label for="description">Description</label>
+                <textarea id="description" rows="3" placeholder="A short story about your restaurant" required>Modern progressive Indian dining celebrating heirloom spices and wood-fired gastronomy in an intimate, contemporary setting.</textarea>
+              </div>
+
+              <div class="form-group full-width">
+                <label for="full-address">Full address</label>
+                <input type="text" id="full-address" placeholder="24 Residency Road" value="24 Residency Road" required />
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="city">City</label>
+                  <input type="text" id="city" placeholder="Bengaluru" value="Bengaluru" required />
+                </div>
+                <div class="form-group">
+                  <label for="postal-code">Postal code</label>
+                  <input type="text" id="postal-code" placeholder="560025" value="560025" required />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="contact-number">Contact number</label>
+                  <input type="tel" id="contact-number" placeholder="+91 80 1234 5678" value="+91 80 1234 5678" required />
+                </div>
+                <div class="form-group">
+                  <label for="restaurant-email">Business email</label>
+                  <input type="email" id="restaurant-email" placeholder="hello@narahouse.in" value="hello@narahouse.in" required />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="website">Website or social link</label>
+                  <input type="text" id="website" placeholder="narahouse.in" value="narahouse.in" />
+                </div>
+                <div class="form-group">
+                  <label for="tables">Number of outlets</label>
+                  <input type="number" id="tables" placeholder="1" value="1" min="1" required />
+                </div>
+              </div>
+
+              <div class="form-group full-width">
+                <label for="operating-hours">Opening hours</label>
+                <input type="text" id="operating-hours" placeholder="12:00–23:00" value="12:00–23:00" required />
+              </div>
+
+              <div class="form-actions-split">
+                <button type="button" class="btn-text-back" onclick="previousStep()">Back</button>
+                <button type="submit" class="btn-primary btn-pill">
+                  Continue to plans
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- STEP 3 (Figma Image 3) -->
+          <div class="step-content" id="step-3">
+            <div class="step-header">
+              <div class="step-indicator">STEP 3 OF 4</div>
+              <h2 class="step-title">Choose your annual plan</h2>
+              <p class="step-subtitle">Your selected plan is highlighted. You can change it here.</p>
+            </div>
+
+            <form class="step-form" id="form-step-3">
+              <div class="plan-cards-container">
+                <!-- Starter -->
+                <div class="figma-plan-card" data-plan="starter" onclick="selectPlanCard(this, 'starter')">
+                  <div class="plan-card-left">
+                    <div class="custom-radio">
+                      <span class="radio-dot"></span>
+                    </div>
+                    <div class="plan-info">
+                      <div class="plan-name">Starter</div>
+                      <div class="plan-sub">50 menu items · 1 location</div>
+                    </div>
+                  </div>
+                  <div class="plan-price">₹18,000 <span class="price-cycle">/ year</span></div>
+                </div>
+
+                <!-- Growth (Selected by default) -->
+                <div class="figma-plan-card active" data-plan="growth" onclick="selectPlanCard(this, 'growth')">
+                  <div class="plan-card-left">
+                    <div class="custom-radio checked">
+                      <span class="radio-dot"></span>
+                    </div>
+                    <div class="plan-info">
+                      <div class="plan-name">Growth</div>
+                      <div class="plan-sub">150 menu items · 3 locations</div>
+                    </div>
+                  </div>
+                  <div class="plan-price">₹36,000 <span class="price-cycle">/ year</span></div>
+                </div>
+
+                <!-- Premium -->
+                <div class="figma-plan-card" data-plan="premium" onclick="selectPlanCard(this, 'premium')">
+                  <div class="plan-card-left">
+                    <div class="custom-radio">
+                      <span class="radio-dot"></span>
+                    </div>
+                    <div class="plan-info">
+                      <div class="plan-name">Premium</div>
+                      <div class="plan-sub">Unlimited items · 10 locations</div>
+                    </div>
+                  </div>
+                  <div class="plan-price">₹72,000 <span class="price-cycle">/ year</span></div>
+                </div>
+              </div>
+
+              <!-- Pricing Summary Box -->
+              <div class="pricing-summary-box">
+                <div class="summary-line">
+                  <span class="summary-line-label">Billing frequency</span>
+                  <span class="summary-line-value">Annual</span>
+                </div>
+                <div class="summary-line">
+                  <span class="summary-line-label">Applicable taxes</span>
+                  <span class="summary-line-value">Calculated at checkout</span>
+                </div>
+                <div class="summary-line total-line">
+                  <span class="summary-line-label">Total due</span>
+                  <span class="summary-line-value" id="summary-total-due">₹36,000 + taxes</span>
+                </div>
+              </div>
+
+              <div class="form-actions-split">
+                <button type="button" class="btn-text-back" onclick="previousStep()">Back</button>
+                <button type="submit" class="btn-primary btn-pill">
+                  Review payment
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- STEP 4 (Figma Image 4) -->
+          <div class="step-content" id="step-4">
+            <div class="step-header">
+              <div class="step-indicator">STEP 4 OF 4</div>
+              <h2 class="step-title">Review and continue</h2>
+              <p class="step-subtitle">This checkout is a prototype. No payment will be processed.</p>
+            </div>
+
+            <!-- Amber Notice Box -->
+            <div class="figma-notice-box">
+              <div class="notice-icon">
+                <svg width="22" height="22" viewBox="0 0 20 20" fill="none">
+                  <rect x="2" y="4" width="16" height="12" rx="2" stroke="#D97706" stroke-width="1.5" />
+                  <path d="M2 8h16M5 13h3" stroke="#D97706" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+              </div>
+              <div class="notice-text">
+                <strong>Payment gateway not connected</strong>
+                <span>This interaction only demonstrates the intended checkout experience.</span>
+              </div>
+            </div>
+
+            <div class="step4-layout-grid">
+              <form class="step-form" id="form-step-4">
+                <div class="form-group full-width">
+                  <label for="card-number">Card number</label>
+                  <input type="text" id="card-number" placeholder="0000 0000 0000 0000" maxlength="19" value="4532 8920 1204 8821" />
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="card-expiry">Expiry</label>
+                    <input type="text" id="card-expiry" placeholder="MM / YY" maxlength="7" value="08 / 28" />
+                  </div>
+                  <div class="form-group">
+                    <label for="card-cvv">CVV</label>
+                    <input type="password" id="card-cvv" placeholder="•••" maxlength="4" value="842" />
+                  </div>
+                </div>
+
+                <div class="form-group full-width">
+                  <label for="card-name">Name on card</label>
+                  <input type="text" id="card-name" placeholder="Aarav Mehta" value="Aarav Mehta" />
+                </div>
+
+                <div class="form-actions-split" style="margin-top: 36px;">
+                  <button type="button" class="btn-text-back" onclick="previousStep()">Back</button>
+                  <button type="submit" class="btn-primary btn-pill">
+                    Simulate confirmation
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </button>
+                </div>
+              </form>
+
+              <!-- Order Summary Card -->
+              <aside class="figma-summary-card">
+                <h3 class="summary-title">Order summary</h3>
+                <div class="summary-row">
+                  <span class="summary-label" id="summary-plan-name">Growth annual plan</span>
+                  <span class="summary-value" id="summary-plan-price">₹36,000</span>
+                </div>
+                <div class="summary-row">
+                  <span class="summary-label">Taxes (18% GST)</span>
+                  <span class="summary-value" id="summary-taxes">₹6,480</span>
+                </div>
+                <div class="summary-divider"></div>
+                <div class="summary-row summary-total">
+                  <span class="summary-label">Total payable</span>
+                  <span class="summary-value" id="summary-total-price">₹42,480</span>
+                </div>
+                <p class="summary-footnote">Billed annually. Renewal terms will appear here when commercial pricing is finalized.</p>
+              </aside>
+            </div>
+          </div>
+
+          <!-- SCREEN 5: SUCCESS / COMPLETE (Figma Image 5) -->
+          <div class="step-content" id="step-success">
+            <div class="success-screen-wrapper">
+              <div class="success-check-circle">
+                <svg width="30" height="30" viewBox="0 0 28 28" fill="none">
+                  <path d="M7 14l5 5 9-10" stroke="#10B981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+
+              <div class="prototype-complete-badge">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                  <circle cx="8" cy="8" r="7" stroke="#E8531A" stroke-width="1.3" />
+                  <path d="M5.5 8.5L7 10L10.5 6.5" stroke="#E8531A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <span>PROTOTYPE COMPLETE</span>
+              </div>
+
+              <h2 class="success-title">Welcome to Smart Menu.</h2>
+              <p class="success-subtitle">
+                <span id="success-restaurant-name">Nara House</span> is ready for its first digital menu. No real payment was processed during this demonstration.
+              </p>
+
+              <div class="success-info-card">
+                <div class="info-card-row">
+                  <span class="info-card-label">Restaurant</span>
+                  <span class="info-card-value" id="success-info-restaurant">Nara House</span>
+                </div>
+                <div class="info-card-row">
+                  <span class="info-card-label">Selected plan</span>
+                  <span class="info-card-value" id="success-info-plan">Growth · Annual</span>
+                </div>
+                <div class="info-card-row">
+                  <span class="info-card-label">Subscription status</span>
+                  <span class="status-badge-pill">Demo active</span>
+                </div>
+              </div>
+
+              <button type="button" class="btn-primary btn-pill btn-lg-pill" onclick="completeAndOpenDashboard()">
+                Set up my menu
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+
+              <div class="success-footer-note">
+                Need help? <a href="#" onclick="alert('Concierge setup support connected.'); return false;">Chat with our setup team</a>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </div>
+    <!-- ===== RESTAURANT DASHBOARD (FIGMA DESIGN) ===== -->
+  <div class="dashboard-root" id="dashboard-view">
+    <!-- Dark Charcoal Sidebar (120px wide, fixed full height) -->
+    <aside class="figma-sidebar">
+      <!-- Restaurant Info Section at TOP of Sidebar -->
+      <div class="sidebar-rest-info">
+        <div class="sidebar-rest-avatar" id="dash-sidebar-avatar">N</div>
+        <div class="sidebar-rest-name" id="dash-sidebar-name">Nara House</div>
+        <div class="sidebar-rest-addr" id="dash-sidebar-addr">Residency Rd</div>
+        <svg class="sidebar-rest-dropdown-icon" width="12" height="12" viewBox="0 0 16 16" fill="none">
+          <path d="M4 6l4 4 4-4" stroke="rgba(255,255,255,0.7)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <!-- Nav Items Stack (Top to Bottom) -->
+      <nav class="sidebar-nav-list">
+        <!-- 1. Overview -->
+        <button class="dash-nav-item active" data-tab="overview" onclick="switchDashboardTab('overview')">
+          <svg viewBox="0 0 20 20" fill="none">
+            <rect x="2.5" y="2.5" width="6.5" height="6.5" rx="1.5" stroke="currentColor" stroke-width="1.6"/>
+            <rect x="11" y="2.5" width="6.5" height="6.5" rx="1.5" stroke="currentColor" stroke-width="1.6"/>
+            <rect x="2.5" y="11" width="6.5" height="6.5" rx="1.5" stroke="currentColor" stroke-width="1.6"/>
+            <rect x="11" y="11" width="6.5" height="6.5" rx="1.5" stroke="currentColor" stroke-width="1.6"/>
+          </svg>
+          <span>Overview</span>
+        </button>
+
+        <!-- 2. Menu Management -->
+        <button class="dash-nav-item" data-tab="menu" onclick="switchDashboardTab('menu')">
+          <svg viewBox="0 0 20 20" fill="none">
+            <path d="M3 5h14M3 10h14M3 15h9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+          <span>Menu mgmt</span>
+        </button>
+
+        <!-- 3. Categories -->
+        <button class="dash-nav-item" data-tab="categories" onclick="switchDashboardTab('categories')">
+          <svg viewBox="0 0 20 20" fill="none">
+            <path d="M3 7.5L9.5 3H17v7.5L10.5 17 3 7.5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+            <circle cx="13" cy="7" r="1.5" fill="currentColor"/>
+          </svg>
+          <span>Categories</span>
+        </button>
+
+        <!-- 4. Dish Library -->
+        <button class="dash-nav-item" data-tab="library" onclick="switchDashboardTab('library')">
+          <svg viewBox="0 0 20 20" fill="none">
+            <path d="M4 3.5h10a2 2 0 012 2V16a1 1 0 01-1 1H5a2 2 0 01-2-2V4.5a1 1 0 011-1z" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M7 3.5v13.5" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+          <span>Dish library</span>
+        </button>
+
+        <!-- 5. Menu Themes -->
+        <button class="dash-nav-item" data-tab="themes" onclick="switchDashboardTab('themes')">
+          <svg viewBox="0 0 20 20" fill="none">
+            <path d="M10 2a8 8 0 100 16c1.1 0 2-.9 2-2 0-.5-.2-1-.5-1.4-.3-.4-.5-.9-.5-1.6 0-1.1.9-2 2-2h1.5c2.5 0 4.5-2 4.5-4.5 0-4.4-4-6.5-9-4.5z" stroke="currentColor" stroke-width="1.6"/>
+            <circle cx="6.5" cy="8.5" r="1.2" fill="currentColor"/>
+            <circle cx="9.5" cy="6" r="1.2" fill="currentColor"/>
+            <circle cx="13.5" cy="7.5" r="1.2" fill="currentColor"/>
+          </svg>
+          <span>Menu themes</span>
+        </button>
+
+        <!-- 6. QR Codes -->
+        <button class="dash-nav-item" data-tab="qrcodes" onclick="switchDashboardTab('qrcodes')">
+          <svg viewBox="0 0 20 20" fill="none">
+            <rect x="3" y="3" width="5.5" height="5.5" rx="1" stroke="currentColor" stroke-width="1.5"/>
+            <rect x="11.5" y="3" width="5.5" height="5.5" rx="1" stroke="currentColor" stroke-width="1.5"/>
+            <rect x="3" y="11.5" width="5.5" height="5.5" rx="1" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M12 12h2v2h-2zm3 3h2v2h-2zm-3 2h2v-2" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+          <span>QR codes</span>
+        </button>
+
+        <!-- 7. AR Preview -->
+        <button class="dash-nav-item" data-tab="arpreview" onclick="switchDashboardTab('arpreview')">
+          <svg viewBox="0 0 20 20" fill="none">
+            <rect x="5" y="2" width="10" height="16" rx="2.5" stroke="currentColor" stroke-width="1.6"/>
+            <circle cx="10" cy="15" r="1" fill="currentColor"/>
+          </svg>
+          <span>AR preview</span>
+        </button>
+
+        <!-- 8. Subscription & Billing -->
+        <button class="dash-nav-item" data-tab="billing" onclick="switchDashboardTab('billing')">
+          <svg viewBox="0 0 20 20" fill="none">
+            <rect x="2.5" y="4.5" width="15" height="11" rx="2" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M2.5 8.5h15" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="6.5" cy="12" r="1" fill="currentColor"/>
+          </svg>
+          <span>Billing</span>
+        </button>
+
+        <!-- Spacer -->
+        <div class="sidebar-spacer"></div>
+
+        <!-- Help & Support -->
+        <button class="dash-nav-item" data-tab="support" onclick="switchDashboardTab('support')">
+          <svg viewBox="0 0 20 20" fill="none">
+            <circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M7.5 8a2.5 2.5 0 014.8.8c0 1.2-1.8 1.7-1.8 2.7M10 14.5h.01" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+          <span>Help & info</span>
+        </button>
+
+        <!-- Log Out -->
+        <button class="dash-nav-item" onclick="handleLogout()" title="Log Out">
+          <svg viewBox="0 0 20 20" fill="none">
+            <path d="M7 16H4.5A1.5 1.5 0 013 14.5v-9A1.5 1.5 0 014.5 4H7M13 13.5l3.5-3.5L13 6.5M16.5 10H7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Log out</span>
+        </button>
+      </nav>
+    </aside>
+
+    <!-- Topbar (White, 56px height, full width) -->
+    <header class="figma-topbar">
+      <div class="topbar-left">
+        <button class="topbar-hamburger-btn" onclick="alert('SmartMenu Workspace Menu');" title="Menu">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="topbar-center">
+        <div class="topbar-status-pill">
+          <span class="topbar-orange-dot"></span>
+          <span id="dash-topbar-plan">Growth plan · Active</span>
+        </div>
+      </div>
+
+      <div class="topbar-right">
+        <button class="topbar-icon-btn" onclick="switchDashboardTab('menu')" title="Search dishes">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+            <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="1.7"/>
+            <path d="M13.5 13.5l3.5 3.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <button class="topbar-icon-btn" onclick="alert('All table QR codes are active and receiving traffic.');" title="Notifications">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+            <path d="M10 3a5 5 0 00-5 5v3l-1.5 2.5h13L15 11V8a5 5 0 00-5-5zM8.5 16.5a1.5 1.5 0 003 0" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="topbar-user-avatar" id="dash-user-avatar" title="Restaurant Account">A</div>
+        <button class="btn-topbar-link" onclick="showLandingView()">Website</button>
+      </div>
+    </header>
+
+    <!-- Workspace Main Container (#F5F0E8 bg) -->
+    <main class="figma-workspace">
+
+      <!-- ==================== TAB 1: OVERVIEW ==================== -->
+      <section class="dash-tab-pane active" id="tab-overview">
+        <!-- Greeting Section -->
+        <div class="tab-header-row">
+          <div>
+            <div class="tab-pretitle" id="dash-overview-date">WEDNESDAY, 15 MARCH</div>
+            <h1 class="tab-title-large">Good morning, <span id="dash-owner-greeting">Aarav</span>.</h1>
+            <p class="tab-subtitle">Here's how your menu is performing this week.</p>
+          </div>
+          <div class="tab-actions">
+            <button class="btn-dash-ghost" onclick="openPreviewMenuModal()">
+              <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
+                <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.4"/>
+                <circle cx="8" cy="8" r="2" fill="currentColor"/>
+              </svg>
+              Preview menu
+            </button>
+            <button class="btn-dash-primary" onclick="openAddDishModal()">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                <path d="M8 2v12M2 8h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              Add dish
+            </button>
+          </div>
+        </div>
+
+        <!-- Yellow Notice Bar -->
+        <div class="yellow-notice-bar">
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 3.5a1 1 0 110 2 1 1 0 010-2zM7 8h2v4H7V8z"/>
+          </svg>
+          <span>Sample analytics. Cannot be data before launch</span>
+        </div>
+
+        <!-- 4 Stat Cards -->
+        <div class="overview-stats-grid">
+          <!-- Total Dishes -->
+          <div class="stat-box">
+            <div class="stat-box-top">
+              <span class="stat-box-label">Total dishes</span>
+              <div class="stat-box-icon">
+                <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+                  <path d="M2.5 14.5h15M4 14.5a6 6 0 0112 0" stroke="currentColor" stroke-width="1.6"/>
+                  <circle cx="10" cy="5.5" r="1.5" fill="currentColor"/>
+                </svg>
+              </div>
+            </div>
+            <div class="stat-box-value" id="overview-total-dishes">48</div>
+            <div class="stat-box-delta">+4 this month</div>
+          </div>
+
+          <!-- Menu Views -->
+          <div class="stat-box">
+            <div class="stat-box-top">
+              <span class="stat-box-label">Menu views</span>
+              <div class="stat-box-icon" style="background: #EFF6FF; color: #2563EB;">
+                <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+                  <path d="M2 10s3-5.5 8-5.5 8 5.5 8 5.5-3 5.5-8 5.5S2 10 2 10z" stroke="currentColor" stroke-width="1.6"/>
+                  <circle cx="10" cy="10" r="2.5" stroke="currentColor" stroke-width="1.6"/>
+                </svg>
+              </div>
+            </div>
+            <div class="stat-box-value">2,847</div>
+            <div class="stat-box-delta">+46.9% last week</div>
+          </div>
+
+          <!-- Active QR Codes -->
+          <div class="stat-box">
+            <div class="stat-box-top">
+              <span class="stat-box-label">Active QR codes</span>
+              <div class="stat-box-icon" style="background: #ECFDF5; color: #059669;">
+                <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+                  <rect x="3" y="3" width="5.5" height="5.5" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                  <rect x="11.5" y="3" width="5.5" height="5.5" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                  <rect x="3" y="11.5" width="5.5" height="5.5" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M12 12h2v2h-2zm3 3h2v2h-2" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+              </div>
+            </div>
+            <div class="stat-box-value">12</div>
+            <div class="stat-box-delta neutral">across 12 tables</div>
+          </div>
+
+          <!-- Categories -->
+          <div class="stat-box">
+            <div class="stat-box-top">
+              <span class="stat-box-label">Categories</span>
+              <div class="stat-box-icon" style="background: #FEF3C7; color: #D97706;">
+                <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+                  <rect x="3" y="3" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+                  <rect x="11" y="3" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+                  <rect x="3" y="11" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+                  <rect x="11" y="11" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+              </div>
+            </div>
+            <div class="stat-box-value">8</div>
+            <div class="stat-box-delta neutral">4 published</div>
+          </div>
+        </div>
+
+        <!-- Middle Two-Column Section: Chart & Top Dishes -->
+        <div class="overview-middle-grid">
+          <!-- Left: Menu Engagement Chart -->
+          <div class="figma-card">
+            <div class="chart-card-header">
+              <div>
+                <h3 class="chart-title">Menu engagement</h3>
+                <span style="font-size: 12px; color: var(--dash-text-secondary);">Table scans & 3D AR sessions</span>
+              </div>
+              <select class="chart-select">
+                <option>Last 7 days</option>
+                <option>Last 30 days</option>
+                <option>This month</option>
+              </select>
+            </div>
+
+            <!-- SVG Smooth Wave Area Chart -->
+            <div class="svg-chart-container">
+              <svg width="100%" height="100%" viewBox="0 0 540 180" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="chartWaveGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#E8531A" stop-opacity="0.32" />
+                    <stop offset="70%" stop-color="#E8531A" stop-opacity="0.06" />
+                    <stop offset="100%" stop-color="#E8531A" stop-opacity="0" />
+                  </linearGradient>
+                </defs>
+
+                <!-- Grid lines -->
+                <line x1="0" y1="35" x2="540" y2="35" stroke="#F3F4F6" stroke-width="1" stroke-dasharray="4 4"/>
+                <line x1="0" y1="80" x2="540" y2="80" stroke="#F3F4F6" stroke-width="1" stroke-dasharray="4 4"/>
+                <line x1="0" y1="125" x2="540" y2="125" stroke="#F3F4F6" stroke-width="1" stroke-dasharray="4 4"/>
+                <line x1="0" y1="170" x2="540" y2="170" stroke="#E5E7EB" stroke-width="1"/>
+
+                <!-- Wave Area Fill -->
+                <path d="M 0 135 C 70 145, 110 85, 170 95 C 230 105, 270 45, 340 50 C 410 55, 450 110, 540 40 L 540 170 L 0 170 Z" fill="url(#chartWaveGrad)"/>
+
+                <!-- Wave Line Stroke -->
+                <path d="M 0 135 C 70 145, 110 85, 170 95 C 230 105, 270 45, 340 50 C 410 55, 450 110, 540 40" fill="none" stroke="#E8531A" stroke-width="2.8" stroke-linecap="round"/>
+
+                <!-- Point Circles -->
+                <circle cx="170" cy="95" r="4.5" fill="#FFFFFF" stroke="#E8531A" stroke-width="2.5"/>
+                <circle cx="340" cy="50" r="4.5" fill="#FFFFFF" stroke="#E8531A" stroke-width="2.5"/>
+                <circle cx="540" cy="40" r="5" fill="#E8531A"/>
+              </svg>
+            </div>
+
+            <div class="chart-days-row">
+              <span>Wed</span>
+              <span>Thu</span>
+              <span>Fri</span>
+              <span>Sat</span>
+              <span>Sun</span>
+              <span>Mon</span>
+              <span>Tue</span>
+            </div>
+          </div>
+
+          <!-- Right: Most Viewed Dishes -->
+          <div class="figma-card">
+            <div class="chart-card-header">
+              <h3 class="chart-title">Most viewed dishes</h3>
+              <button class="btn-table-more">•••</button>
+            </div>
+
+            <div class="dish-ranked-list">
+              <!-- Dish 1 -->
+              <div class="dish-ranked-row">
+                <span class="dish-rank-num">1</span>
+                <img src="saffron_butter_chicken.png" alt="Butter Chicken" class="dish-rank-thumb" />
+                <div class="dish-rank-info">
+                  <div class="dish-rank-name">Saffron Butter Chicken</div>
+                  <div class="dish-rank-cat">Mains · Non-Veg</div>
+                </div>
+                <span class="dish-rank-views">942 views</span>
+                <button class="btn-table-more">⋮</button>
+              </div>
+
+              <!-- Dish 2 -->
+              <div class="dish-ranked-row">
+                <span class="dish-rank-num">2</span>
+                <img src="wild_mushroom_pasta.png" alt="Mushroom Pasta" class="dish-rank-thumb" />
+                <div class="dish-rank-info">
+                  <div class="dish-rank-name">Wild Mushroom Pasta</div>
+                  <div class="dish-rank-cat">Mains · Veg</div>
+                </div>
+                <span class="dish-rank-views">785 views</span>
+                <button class="btn-table-more">⋮</button>
+              </div>
+
+              <!-- Dish 3 -->
+              <div class="dish-ranked-row">
+                <span class="dish-rank-num">3</span>
+                <img src="garden_burrata_bowl.png" alt="Burrata Bowl" class="dish-rank-thumb" />
+                <div class="dish-rank-info">
+                  <div class="dish-rank-name">Garden Burrata Bowl</div>
+                  <div class="dish-rank-cat">Bowls · Veg</div>
+                </div>
+                <span class="dish-rank-views">612 views</span>
+                <button class="btn-table-more">⋮</button>
+              </div>
+
+              <!-- Dish 4 -->
+              <div class="dish-ranked-row">
+                <span class="dish-rank-num">4</span>
+                <img src="farfalle_pasta_ar.png" alt="Farfalle" class="dish-rank-thumb" />
+                <div class="dish-rank-info">
+                  <div class="dish-rank-name">Farfalle Truffle Pasta</div>
+                  <div class="dish-rank-cat">Mains · Veg</div>
+                </div>
+                <span class="dish-rank-views">508 views</span>
+                <button class="btn-table-more">⋮</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 Quick Action Cards at Bottom -->
+        <div class="overview-actions-grid">
+          <div class="quick-action-card" onclick="openAddDishModal()">
+            <div class="quick-action-content">
+              <div class="quick-action-icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M10 4v12M4 10h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div>
+                <div class="quick-action-title">Add a new dish</div>
+                <div class="quick-action-sub">Upload food photo & 3D AR model</div>
+              </div>
+            </div>
+            <span class="quick-action-arrow">→</span>
+          </div>
+
+          <div class="quick-action-card" onclick="switchDashboardTab('themes')">
+            <div class="quick-action-content">
+              <div class="quick-action-icon" style="background: #FDF2F8; color: #DB2777;">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.6"/>
+                  <path d="M6 10h8M10 6v8" stroke="currentColor" stroke-width="1.6"/>
+                </svg>
+              </div>
+              <div>
+                <div class="quick-action-title">Customize theme</div>
+                <div class="quick-action-sub">Match brand colors & typography</div>
+              </div>
+            </div>
+            <span class="quick-action-arrow">→</span>
+          </div>
+
+          <div class="quick-action-card" onclick="switchDashboardTab('qrcodes')">
+            <div class="quick-action-content">
+              <div class="quick-action-icon" style="background: #ECFDF5; color: #059669;">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <rect x="4" y="4" width="5" height="5" stroke="currentColor" stroke-width="1.5"/>
+                  <rect x="11" y="4" width="5" height="5" stroke="currentColor" stroke-width="1.5"/>
+                  <rect x="4" y="11" width="5" height="5" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+              </div>
+              <div>
+                <div class="quick-action-title">Generate a QR code</div>
+                <div class="quick-action-sub">Printable tabletop standees</div>
+              </div>
+            </div>
+            <span class="quick-action-arrow">→</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== TAB 2: MENU MANAGEMENT ==================== -->
+      <section class="dash-tab-pane" id="tab-menu">
+        <div class="tab-header-row">
+          <div>
+            <div class="tab-pretitle">RETAIL WORKSPACE</div>
+            <h1 class="tab-title-large">Menu management</h1>
+            <p class="tab-subtitle">Organize dishes, pricing, and availability.</p>
+          </div>
+          <div class="tab-actions">
+            <button class="btn-dash-ghost" onclick="openPreviewMenuModal()">Preview published</button>
+            <button class="btn-dash-primary" onclick="openAddDishModal()">+ Add dish</button>
+          </div>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="menu-mgmt-search-bar">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+            <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="1.7"/>
+            <path d="M13.5 13.5l3.5 3.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+          </svg>
+          <input type="text" id="menu-mgmt-search-input" class="menu-mgmt-search-input" placeholder="Search dishes by name, tag, or ingredient..." oninput="filterMenuTable()" />
+        </div>
+
+        <!-- Filter Controls -->
+        <div class="menu-mgmt-filters-row">
+          <div class="filter-selects-wrap">
+            <select class="filter-select" id="mgmt-cat-select" onchange="filterMenuTable()">
+              <option value="All">All categories</option>
+              <option value="Mains">Mains</option>
+              <option value="Starters">Starters</option>
+              <option value="Bowls">Bowls & Salads</option>
+              <option value="Desserts">Desserts</option>
+              <option value="Beverages">Beverages</option>
+            </select>
+
+            <select class="filter-select" id="mgmt-avail-select" onchange="filterMenuTable()">
+              <option value="All">All availability</option>
+              <option value="Available">Available</option>
+              <option value="SoldOut">Sold out</option>
+            </select>
+          </div>
+
+          <div class="filter-dish-count" id="mgmt-dish-count">4 dishes</div>
+        </div>
+
+        <!-- Table Card -->
+        <div class="menu-table-container">
+          <table class="menu-mgmt-table">
+            <thead>
+              <tr>
+                <th style="width: 28px;"></th>
+                <th>DISH</th>
+                <th>CATEGORY</th>
+                <th>PRICE</th>
+                <th>AVAILABILITY</th>
+                <th style="width: 40px;"></th>
+              </tr>
+            </thead>
+            <tbody id="dash-menu-table-body">
+              <!-- Dynamically Populated by JS -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Bottom AR Info Banner -->
+        <div class="ar-info-card">
+          <div class="ar-info-left">
+            <div class="ar-info-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M3.27 6.96L12 12.01l8.73-5.05M12 22.08V12" stroke="currentColor" stroke-width="1.8"/>
+              </svg>
+            </div>
+            <div>
+              <div class="ar-info-title">About AR-ready dishes</div>
+              <div class="ar-info-sub">Dishes marked with 3D AR launch instantly into augmented reality on guest devices without requiring an app.</div>
+            </div>
+          </div>
+          <button class="btn-dash-ghost" onclick="alert('SmartMenu supports .glb, .gltf, and USDZ photorealistic assets. Contact our concierge if you need 3D scans.');">Learn about 3D assets →</button>
+        </div>
+      </section>
+
+      <!-- ==================== TAB 3: CATEGORIES ==================== -->
+      <section class="dash-tab-pane" id="tab-categories">
+        <div class="tab-header-row">
+          <div>
+            <div class="tab-pretitle">MENU TAXONOMY</div>
+            <h1 class="tab-title-large">Categories</h1>
+            <p class="tab-subtitle">Manage course divisions and guest navigation groupings.</p>
+          </div>
+          <button class="btn-dash-primary" onclick="alert('Category creation modal: e.g. Tasting Menu, Chef Specials');">+ New category</button>
+        </div>
+
+        <div class="menu-table-container">
+          <table class="menu-mgmt-table">
+            <thead>
+              <tr>
+                <th>CATEGORY NAME</th>
+                <th>DISH COUNT</th>
+                <th>STATUS</th>
+                <th>ACTIONS</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Mains</strong></td>
+                <td>3 dishes</td>
+                <td><span class="diet-pill">Published</span></td>
+                <td><button class="btn-table-more" onclick="switchDashboardTab('menu')">Manage →</button></td>
+              </tr>
+              <tr>
+                <td><strong>Starters</strong></td>
+                <td>1 dish</td>
+                <td><span class="diet-pill">Published</span></td>
+                <td><button class="btn-table-more" onclick="switchDashboardTab('menu')">Manage →</button></td>
+              </tr>
+              <tr>
+                <td><strong>Bowls & Salads</strong></td>
+                <td>1 dish</td>
+                <td><span class="diet-pill">Published</span></td>
+                <td><button class="btn-table-more" onclick="switchDashboardTab('menu')">Manage →</button></td>
+              </tr>
+              <tr>
+                <td><strong>Desserts</strong></td>
+                <td>0 dishes</td>
+                <td><span class="diet-pill" style="background:#FEF3C7; color:#92400E;">Draft</span></td>
+                <td><button class="btn-table-more" onclick="openAddDishModal()">+ Add dish</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ==================== TAB 4: DISH LIBRARY ==================== -->
+      <section class="dash-tab-pane" id="tab-library">
+        <div class="tab-header-row">
+          <div>
+            <div class="tab-pretitle">ASSET REPOSITORY</div>
+            <h1 class="tab-title-large">Dish library</h1>
+            <p class="tab-subtitle">Studio food photography and interactive 3D GLB models.</p>
+          </div>
+          <button class="btn-dash-primary" onclick="openAddDishModal()">+ Upload 3D asset</button>
+        </div>
+
+        <div class="overview-actions-grid">
+          <div class="figma-card" style="padding: 16px;">
+            <img src="saffron_butter_chicken.png" alt="Butter Chicken" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 12px;" />
+            <h4 style="margin: 0 0 4px; font-size: 15px;">Saffron Butter Chicken</h4>
+            <div style="font-size: 12px; color: #059669; font-weight: 600;">✓ Photogrammetry 3D Calibrated</div>
+          </div>
+          <div class="figma-card" style="padding: 16px;">
+            <img src="wild_mushroom_pasta.png" alt="Pasta" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 12px;" />
+            <h4 style="margin: 0 0 4px; font-size: 15px;">Wild Mushroom Pasta</h4>
+            <div style="font-size: 12px; color: #059669; font-weight: 600;">✓ High-Poly PBR Shaded</div>
+          </div>
+          <div class="figma-card" style="padding: 16px;">
+            <img src="garden_burrata_bowl.png" alt="Burrata" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 12px;" />
+            <h4 style="margin: 0 0 4px; font-size: 15px;">Garden Burrata Bowl</h4>
+            <div style="font-size: 12px; color: #059669; font-weight: 600;">✓ Ready for AR Table Placement</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== TAB 5: MENU THEMES ==================== -->
+      <section class="dash-tab-pane" id="tab-themes">
+        <div class="tab-header-row">
+          <div>
+            <div class="tab-pretitle">RESTAURANT BRANDING</div>
+            <h1 class="tab-title-large">Menu themes</h1>
+            <p class="tab-subtitle">Shape every detail of the guest experience.</p>
+          </div>
+          <div class="tab-actions">
+            <button class="btn-dash-ghost" onclick="alert('Theme configuration saved to restaurant profile!');">Save theme</button>
+            <button class="btn-dash-primary" onclick="alert('Menu published with selected theme styling!');">Publish menu →</button>
+          </div>
+        </div>
+
+        <!-- 5 Theme Cards in Horizontal Row -->
+        <div class="themes-horizontal-scroll">
+          <!-- 1. Modern Minimal (Applied by default) -->
+          <div class="theme-preset-card selected" onclick="selectMenuTheme('Modern Minimal', this)">
+            <div class="theme-card-preview-bar" style="background: #F5F0E8;">
+              <div class="theme-preview-line" style="background: #E8531A; width: 60%;"></div>
+              <div class="theme-preview-line" style="background: #FFFFFF; width: 85%;"></div>
+              <div class="theme-preview-line" style="background: #D1D5DB; width: 45%;"></div>
+            </div>
+            <div class="theme-name-row">
+              <span class="theme-name-label">Modern Minimal</span>
+              <span class="theme-badge-applied">Applied</span>
+            </div>
+            <a href="#" class="theme-preview-link" onclick="openPreviewMenuModal(); return false;">Preview theme</a>
+          </div>
+
+          <!-- 2. Fine Dining -->
+          <div class="theme-preset-card" onclick="selectMenuTheme('Fine Dining', this)">
+            <div class="theme-card-preview-bar" style="background: #1C1C1A;">
+              <div class="theme-preview-line" style="background: #D4AF37; width: 60%;"></div>
+              <div class="theme-preview-line" style="background: #333333; width: 85%;"></div>
+              <div class="theme-preview-line" style="background: #444444; width: 50%;"></div>
+            </div>
+            <div class="theme-name-row">
+              <span class="theme-name-label">Fine Dining</span>
+              <span class="theme-badge-applied" style="display:none;">Applied</span>
+            </div>
+            <a href="#" class="theme-preview-link" onclick="openPreviewMenuModal(); return false;">Preview theme</a>
+          </div>
+
+          <!-- 3. Traditional Indian -->
+          <div class="theme-preset-card" onclick="selectMenuTheme('Traditional Indian', this)">
+            <div class="theme-card-preview-bar" style="background: #FAF0E6;">
+              <div class="theme-preview-line" style="background: #C85A17; width: 60%;"></div>
+              <div class="theme-preview-line" style="background: #E6C280; width: 80%;"></div>
+              <div class="theme-preview-line" style="background: #800000; width: 40%;"></div>
+            </div>
+            <div class="theme-name-row">
+              <span class="theme-name-label">Traditional Indian</span>
+              <span class="theme-badge-applied" style="display:none;">Applied</span>
+            </div>
+            <a href="#" class="theme-preview-link" onclick="openPreviewMenuModal(); return false;">Preview theme</a>
+          </div>
+
+          <!-- 4. Cafe & Bakery -->
+          <div class="theme-preset-card" onclick="selectMenuTheme('Cafe & Bakery', this)">
+            <div class="theme-card-preview-bar" style="background: #F3F4F6;">
+              <div class="theme-preview-line" style="background: #78350F; width: 50%;"></div>
+              <div class="theme-preview-line" style="background: #E5E7EB; width: 85%;"></div>
+              <div class="theme-preview-line" style="background: #D97706; width: 65%;"></div>
+            </div>
+            <div class="theme-name-row">
+              <span class="theme-name-label">Cafe & Bakery</span>
+              <span class="theme-badge-applied" style="display:none;">Applied</span>
+            </div>
+            <a href="#" class="theme-preview-link" onclick="openPreviewMenuModal(); return false;">Preview theme</a>
+          </div>
+
+          <!-- 5. Luxury Dark -->
+          <div class="theme-preset-card" onclick="selectMenuTheme('Luxury Dark', this)">
+            <div class="theme-card-preview-bar" style="background: #0A0A0A;">
+              <div class="theme-preview-line" style="background: #E8531A; width: 50%;"></div>
+              <div class="theme-preview-line" style="background: #1F2421; width: 75%;"></div>
+              <div class="theme-preview-line" style="background: #333333; width: 60%;"></div>
+            </div>
+            <div class="theme-name-row">
+              <span class="theme-name-label">Luxury Dark</span>
+              <span class="theme-badge-applied" style="display:none;">Applied</span>
+            </div>
+            <a href="#" class="theme-preview-link" onclick="openPreviewMenuModal(); return false;">Preview theme</a>
+          </div>
+        </div>
+
+        <!-- Bottom Two-Column: Customize Theme & Live Preview -->
+        <div class="themes-custom-grid">
+          <!-- Left: Customize Card -->
+          <div class="theme-custom-card">
+            <h3 style="font-size: 16px; font-weight: 700; margin: 0 0 16px 0;">Customize your theme</h3>
+
+            <!-- Brand Accent Swatches -->
+            <label class="theme-field-label">Brand Accent</label>
+            <div class="color-swatches-row">
+              <div class="color-swatch-circle active" style="background: #E8531A;" onclick="selectBrandAccent('#E8531A', this)" title="Orange"></div>
+              <div class="color-swatch-circle" style="background: #5F6F52;" onclick="selectBrandAccent('#5F6F52', this)" title="Olive Green"></div>
+              <div class="color-swatch-circle" style="background: #8B1E1E;" onclick="selectBrandAccent('#8B1E1E', this)" title="Dark Red"></div>
+              <div class="color-swatch-circle" style="background: #222222;" onclick="selectBrandAccent('#222222', this)" title="Charcoal"></div>
+            </div>
+
+            <!-- Typography Dropdown -->
+            <label class="theme-field-label">Typography</label>
+            <select class="filter-select" style="width: 100%; margin-bottom: 20px;">
+              <option selected>Editorial Sans</option>
+              <option>Playfair Serif</option>
+              <option>Modern Grotesk</option>
+              <option>Classic Elegance</option>
+            </select>
+
+            <!-- Menu Layout Toggles -->
+            <label class="theme-field-label">Menu Layout</label>
+            <div class="layout-toggle-group">
+              <button class="layout-toggle-btn active" onclick="selectMenuLayout('Editorial', this)">Editorial</button>
+              <button class="layout-toggle-btn" onclick="selectMenuLayout('Grid', this)">Grid</button>
+              <button class="layout-toggle-btn" onclick="selectMenuLayout('Compact', this)">Compact</button>
+            </div>
+
+            <!-- Dish Card Style -->
+            <label class="theme-field-label">Dish Card Style</label>
+            <select class="filter-select" style="width: 100%; margin-bottom: 20px;">
+              <option selected>Image forward</option>
+              <option>Minimalist list</option>
+              <option>Split cards</option>
+            </select>
+
+            <!-- Checkboxes -->
+            <label class="theme-checkbox-row">
+              <input type="checkbox" checked />
+              <span>Show dietary badges</span>
+            </label>
+            <label class="theme-checkbox-row">
+              <input type="checkbox" checked />
+              <span>Show price prominently</span>
+            </label>
+          </div>
+
+          <!-- Right: Live Preview Stage -->
+          <div class="theme-phone-preview-stage">
+            <div class="phone-mockup-frame">
+              <div style="background: #FAF9F6; padding: 16px;">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+                  <div style="display: flex; align-items: center; gap: 6px;">
+                    <span id="theme-preview-dot" style="width: 8px; height: 8px; border-radius: 50%; background: #E8531A;"></span>
+                    <strong style="font-size: 12px;">Nara House</strong>
+                  </div>
+                  <span style="font-size: 10px; color: #6B7280;">Table 08</span>
+                </div>
+                <img src="restaurant_interior.png" alt="Cover" style="width: 100%; height: 90px; object-fit: cover; border-radius: 8px; margin-bottom: 10px;" />
+                <div style="font-size: 11px; font-weight: 700; margin-bottom: 8px;">Featured Dishes</div>
+                <div style="display: flex; flex-direction: column; gap: 8px;">
+                  <div style="background: #fff; padding: 8px; border-radius: 8px; border: 1px solid #E5E7EB; display: flex; gap: 8px; align-items: center;">
+                    <img src="saffron_butter_chicken.png" style="width: 36px; height: 36px; border-radius: 6px; object-fit: cover;" />
+                    <div style="flex: 1;">
+                      <div style="font-size: 11px; font-weight: 700;">Saffron Butter Chicken</div>
+                      <div style="font-size: 9.5px; color: #E8531A; font-weight: 700;">₹680</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== TAB 6: QR CODES ==================== -->
+      <section class="dash-tab-pane" id="tab-qrcodes">
+        <div class="tab-header-row">
+          <div>
+            <div class="tab-pretitle">GUEST ACCESS</div>
+            <h1 class="tab-title-large">QR codes</h1>
+            <p class="tab-subtitle">Create beautiful access points for every table and outlet.</p>
+          </div>
+          <button class="btn-dash-primary" onclick="alert('Generated high-resolution QR Standee card!');">+ Generate new code</button>
+        </div>
+
+        <!-- Main QR Card (3 Columns) -->
+        <div class="qr-primary-card">
+          <!-- Left Side: QR Code Visual -->
+          <div class="qr-visual-box">
+            <svg width="120" height="120" viewBox="0 0 100 100" fill="none" style="display: block; margin: 0 auto;">
+              <rect width="100" height="100" fill="white" rx="8"/>
+              <rect x="8" y="8" width="30" height="30" stroke="#1C1C1A" stroke-width="5" fill="none"/>
+              <rect x="16" y="16" width="14" height="14" fill="#1C1C1A"/>
+              <rect x="62" y="8" width="30" height="30" stroke="#1C1C1A" stroke-width="5" fill="none"/>
+              <rect x="70" y="16" width="14" height="14" fill="#1C1C1A"/>
+              <rect x="8" y="62" width="30" height="30" stroke="#1C1C1A" stroke-width="5" fill="none"/>
+              <rect x="16" y="70" width="14" height="14" fill="#1C1C1A"/>
+              <circle cx="50" cy="50" r="10" fill="#E8531A"/>
+              <path d="M47 50h6M50 47v6" stroke="#fff" stroke-width="1.8"/>
+              <rect x="52" y="62" width="8" height="8" fill="#1C1C1A"/>
+              <rect x="70" y="62" width="14" height="6" fill="#1C1C1A"/>
+              <rect x="62" y="76" width="8" height="16" fill="#1C1C1A"/>
+              <rect x="76" y="76" width="16" height="16" fill="#1C1C1A"/>
+            </svg>
+            <div class="qr-caption-main">Explore our menu</div>
+            <div class="qr-caption-sub">Scan to browse · Table 08</div>
+            <span class="qr-badge-status">PLACING 46% · NOT PACKED</span>
+          </div>
+
+          <!-- Center Details -->
+          <div class="qr-details-center">
+            <div class="qr-badge-pill">
+              <span class="topbar-orange-dot"></span>
+              PRIMARY MENU CODE
+            </div>
+            <h2 class="qr-card-title" id="qr-rest-title">Nara House · Table 08</h2>
+            <div class="qr-warning-note">This graphic is a visual placeholder and is not a working encoded QR code.</div>
+
+            <div class="qr-url-row">
+              <input type="text" id="qr-share-url" value="smartmenu.demo/nara/table-08" readonly class="qr-url-input" />
+              <button class="btn-copy-url" onclick="copyQrUrl()">Copy</button>
+            </div>
+
+            <div class="qr-buttons-row">
+              <button class="btn-dash-ghost" onclick="window.print()">Download print card</button>
+              <button class="btn-dash-primary" onclick="openPreviewMenuModal()">Preview linked menu →</button>
+            </div>
+          </div>
+
+          <!-- Right: Dark Engagement Card -->
+          <div class="qr-engagement-dark-card">
+            <div class="qr-dark-title">Code engagement</div>
+            <div class="qr-dark-sub">Sample data: Last 30 days</div>
+            <div class="qr-dark-scans-number">1,284</div>
+            <div class="qr-dark-scans-label">Total scans</div>
+            <div class="qr-dark-divider"></div>
+            <div class="qr-dark-stat-row">
+              <span>Menu opens</span>
+              <span>1,150</span>
+            </div>
+            <div class="qr-dark-stat-row">
+              <span>AR previews</span>
+              <span>316</span>
+            </div>
+            <div class="qr-dark-stat-row">
+              <span>Most active table</span>
+              <span>Table 08</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Code Table Below -->
+        <div class="qr-table-card">
+          <table class="qr-table">
+            <thead>
+              <tr>
+                <th>CODE NAME</th>
+                <th>LINKED TO</th>
+                <th>SCANS</th>
+                <th>STATUS</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Main entrance</strong></td>
+                <td>All-day menu</td>
+                <td>453</td>
+                <td><span class="badge-active-green">Active</span></td>
+              </tr>
+              <tr>
+                <td><strong>Table 04</strong></td>
+                <td>All-day menu</td>
+                <td>284</td>
+                <td><span class="badge-active-green">Active</span></td>
+              </tr>
+              <tr>
+                <td><strong>Table 08</strong></td>
+                <td>All-day menu</td>
+                <td>381</td>
+                <td><span class="badge-active-green">Active</span></td>
+              </tr>
+              <tr>
+                <td><strong>Private dining</strong></td>
+                <td>Tasting menu</td>
+                <td>146</td>
+                <td><span class="badge-active-green">Active</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ==================== TAB 7: AR PREVIEW (DEMO) ==================== -->
+      <section class="dash-tab-pane" id="tab-arpreview">
+        <div class="tab-header-row">
+          <div>
+            <div class="tab-pretitle">IMMERSIVE AR</div>
+            <h1 class="tab-title-large">AR preview</h1>
+            <p class="tab-subtitle">Experience photorealistic 3D food directly on physical table surfaces.</p>
+          </div>
+        </div>
+
+        <div class="ar-preview-stage">
+          <div class="yellow-notice-bar" style="margin-bottom: 20px;">
+            <span>AR Demo coming soon — Instant camera tracking for iOS QuickLook and Android WebXR</span>
+          </div>
+
+          <div class="ar-phone-mockup">
+            <div class="ar-phone-inner">
+              <div style="background: #1C1C1A; color: #fff; padding: 12px; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: space-between;">
+                <span>SmartMenu AR Stage</span>
+                <span style="color: #E8531A;">● Live 3D</span>
+              </div>
+              <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; background: radial-gradient(circle, #f5f0e8 0%, #e2dac9 100%); padding: 20px;">
+                <img src="saffron_butter_chicken.png" alt="3D Model" style="width: 180px; height: 180px; object-fit: contain; filter: drop-shadow(0 15px 25px rgba(0,0,0,0.3));" />
+                <h4 style="margin: 14px 0 4px; font-size: 16px;">Saffron Butter Chicken</h4>
+                <p style="font-size: 12px; color: #6B7280; margin: 0 0 16px;">Pinch to scale, drag to rotate</p>
+                <button class="btn-dash-primary" onclick="alert('Starting WebAR camera stream...');">Launch WebAR Camera</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== TAB 8: SUBSCRIPTION & BILLING (WITH SUPABASE SETTINGS) ==================== -->
+      <section class="dash-tab-pane" id="tab-billing">
+        <div class="tab-header-row">
+          <div>
+            <div class="tab-pretitle">ACCOUNT & INFRASTRUCTURE</div>
+            <h1 class="tab-title-large">Subscription & billing</h1>
+            <p class="tab-subtitle">Manage plan subscription, invoices, and cloud database connections.</p>
+          </div>
+        </div>
+
+        <!-- Plan Card -->
+        <div class="figma-card" style="margin-bottom: 24px; max-width: 760px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+            <div>
+              <span class="diet-pill" style="margin-bottom: 6px;">CURRENT PLAN</span>
+              <h3 style="font-size: 22px; margin: 4px 0;">Growth Plan · Active</h3>
+              <p style="font-size: 13px; color: #6B7280; margin: 0;">₹2,499 / month · Billed annually</p>
+            </div>
+            <button class="btn-dash-ghost" onclick="alert('Subscription settings and billing invoices');">Manage Billing</button>
+          </div>
+          <div style="font-size: 13px; color: #4B5563; line-height: 1.5;">
+            Includes unlimited table QR standees, full WebAR 3D dish interactions, custom theme branding, and PostgreSQL cloud sync.
+          </div>
+        </div>
+
+        <!-- Cloud Supabase Settings Card (Kept 100% Functional) -->
+        <div class="figma-card" style="max-width: 760px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; padding-bottom: 14px; border-bottom: 1px solid #F3F4F6;">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <div style="width: 40px; height: 40px; border-radius: 10px; background: #ECFDF5; display: flex; align-items: center; justify-content: center; color: #059669;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 style="font-size: 17px; font-weight: 700; color: #111827; margin: 0 0 2px 0;">Supabase Database Connection</h3>
+                <p style="font-size: 13px; color: #6B7280; margin: 0;">Live multi-device database and 3D storage sync.</p>
+              </div>
+            </div>
+            <div id="db-status-badge" style="display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; background: #FEF3C7; color: #92400E;">
+              <span id="db-status-dot" style="width: 8px; height: 8px; border-radius: 50%; background: #F59E0B;"></span>
+              <span id="db-status-text">Demo Mode (Local)</span>
+            </div>
+          </div>
+
+          <form onsubmit="handleSupabaseSave(event)">
+            <div style="margin-bottom: 14px;">
+              <label for="db-supabase-url" style="font-weight: 600; font-size: 13px; display: block; margin-bottom: 6px;">Supabase Project URL</label>
+              <input type="url" id="db-supabase-url" placeholder="https://your-project.supabase.co" style="width: 100%; padding: 10px 12px; border: 1px solid #D1D5DB; border-radius: 8px; font-family: monospace; font-size: 13px;" />
+            </div>
+
+            <div style="margin-bottom: 16px;">
+              <label for="db-supabase-key" style="font-weight: 600; font-size: 13px; display: block; margin-bottom: 6px;">Supabase Anon Key</label>
+              <input type="password" id="db-supabase-key" placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..." style="width: 100%; padding: 10px 12px; border: 1px solid #D1D5DB; border-radius: 8px; font-family: monospace; font-size: 13px;" />
+            </div>
+
+            <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+              <button type="submit" class="btn-dash-primary" style="padding: 9px 20px;">Save & Connect Supabase</button>
+              <button type="button" class="btn-dash-ghost" onclick="testSupabaseConnection()">⚡ Test Connection</button>
+              <button type="button" onclick="resetSupabaseToDemo()" style="border: none; background: transparent; cursor: pointer; font-size: 12.5px; color: #9CA3AF; text-decoration: underline;">Reset to Demo</button>
+            </div>
+
+            <div id="db-test-result" style="display: none; margin-top: 14px; padding: 10px 14px; border-radius: 8px; font-size: 13px;"></div>
+          </form>
+        </div>
+      </section>
+
+      <!-- ==================== TAB 9: HELP & SUPPORT ==================== -->
+      <section class="dash-tab-pane" id="tab-support">
+        <div class="tab-header-row">
+          <div>
+            <div class="tab-pretitle">ASSISTANCE & ONBOARDING</div>
+            <h1 class="tab-title-large">Help & support</h1>
+            <p class="tab-subtitle">Concierge setup team for 3D model capture, table standees, and menu design.</p>
+          </div>
+        </div>
+
+        <div class="figma-card" style="max-width: 760px;">
+          <h3 style="font-size: 18px; margin: 0 0 10px 0;">24/7 SmartMenu Concierge</h3>
+          <p style="font-size: 14px; color: #4B5563; line-height: 1.6; margin-bottom: 20px;">
+            Need help scanning food dishes into 3D AR or printing customized acrylic tabletop standees? Our team can visit your restaurant or convert your food photos into calibrated 3D models.
+          </p>
+          <button class="btn-dash-primary" onclick="alert('Concierge chat connected! A setup specialist will reply shortly.');">Chat with Concierge →</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- ==================== TAB 3: PREVIEW MENU MODAL OVERLAY ==================== -->
+  <div id="preview-menu-modal" class="preview-modal-backdrop" style="display: none;">
+    <div class="preview-modal-window">
+      <!-- Dark Topbar -->
+      <div class="preview-modal-topbar">
+        <div class="preview-topbar-left">
+          <button class="preview-close-btn" onclick="closePreviewMenuModal()" title="Close Preview">✕</button>
+          <span class="preview-table-pill">Table C08</span>
+        </div>
+        <div class="preview-topbar-title">smartmenu · Guest Live Preview</div>
+        <button class="preview-topbar-more" onclick="alert('Guest options: Call Server, Request Water, Bill');">•••</button>
+      </div>
+
+      <!-- Scrollable Guest Experience -->
+      <div class="preview-modal-scroll-area">
+        <!-- Restaurant Hero Image -->
+        <div class="preview-hero-banner">
+          <img src="restaurant_interior.png" alt="Restaurant Interior" class="preview-hero-img" />
+          <div class="preview-hero-gradient"></div>
+        </div>
+
+        <div class="preview-guest-body">
+          <!-- Restaurant Card -->
+          <div class="preview-restaurant-card">
+            <div class="preview-rest-avatar" id="modal-rest-avatar">N</div>
+            <div class="preview-welcome-tag">WELCOME TO</div>
+            <h2 class="preview-rest-title" id="modal-rest-name">Nara House</h2>
+            <div class="preview-rest-sub">Modern Indian · Residency Road</div>
+            <p class="preview-rest-quote">“Seasonal ingredients, familiar flavours, and a little wonder on every plate.”</p>
+          </div>
+
+          <!-- Search Bar -->
+          <div class="preview-search-wrap">
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
+              <circle cx="7" cy="7" r="5" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M11 11l3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <input type="text" class="preview-search-input" placeholder="Search dishes, drinks, flavours..." oninput="handlePreviewSearch(this.value)" />
+          </div>
+
+          <!-- Category Pills -->
+          <div class="preview-category-chips">
+            <button class="preview-cat-pill active" onclick="filterPreviewCat('Featured', this)">Featured</button>
+            <button class="preview-cat-pill" onclick="filterPreviewCat('Small plates', this)">Small plates</button>
+            <button class="preview-cat-pill" onclick="filterPreviewCat('Mains', this)">Mains</button>
+            <button class="preview-cat-pill" onclick="filterPreviewCat('Dessert', this)">Dessert</button>
+          </div>
+
+          <!-- Curated Heading -->
+          <div class="preview-curated-header">
+            <div>
+              <div class="curated-sub">CURATED FOR YOU</div>
+              <h3 class="curated-title">Featured</h3>
+            </div>
+            <span class="curated-count" id="modal-dishes-count">4 dishes</span>
+          </div>
+
+          <!-- 2-Column Grid of Dish Cards -->
+          <div class="preview-dish-grid-2col" id="modal-dishes-grid">
+            <!-- Dynamically populated from appDishes -->
+          </div>
+
+          <!-- SmartMenu Branding -->
+          <div class="preview-modal-footer-brand">
+            <strong>smartmenu</strong> · AR experience · No app required
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+      <script src="supabase-client.js"></script>
+      <script src="script.js"></script>
+  <script>
+    /* ==========================================================================
+       SMARTMENU UNIFIED ENGINE (FIGMA REPLICATION)
+       ========================================================================== */
+
+    const defaultRestaurant = {
+      name: 'Nara House',
+      owner: 'Aarav Mehta',
+      email: 'aarav@narahouse.in',
+      phone: '+91 98765 43210',
+      cuisine: 'Modern Indian',
+      plan: 'Growth · Annual',
+      address: '24 Residency Road, Bengaluru, 560025',
+      tables: 25,
+      hours: '12:00–23:00',
+      logo: null
+    };
+
+    const defaultDishes = [
+      {
+        id: 'dish-1',
+        name: 'Saffron Butter Chicken',
+        category: 'Mains',
+        diet: 'Non-Veg',
+        price: 680,
+        desc: 'Slow-simmered velvety tomato-cashew reduction infused with Kashmiri saffron and char-grilled chicken.',
+        img: 'saffron_butter_chicken.png',
+        inStock: true
+      },
+      {
+        id: 'dish-2',
+        name: 'Wild Mushroom Pasta',
+        category: 'Mains',
+        diet: 'Veg',
+        price: 520,
+        desc: 'Handmade pasta ribbons tossed in white truffle oil, porcini broth, and toasted pine nuts.',
+        img: 'wild_mushroom_pasta.png',
+        inStock: true
+      },
+      {
+        id: 'dish-3',
+        name: 'Garden Burrata Bowl',
+        category: 'Bowls',
+        diet: 'Veg',
+        price: 460,
+        desc: 'Artisanal burrata with heirloom tomatoes, basil oil drizzle, and balsamic glaze.',
+        img: 'garden_burrata_bowl.png',
+        inStock: true
+      },
+      {
+        id: 'dish-4',
+        name: 'Farfalle Truffle Pasta',
+        category: 'Mains',
+        diet: 'Veg',
+        price: 580,
+        desc: 'Bowtie pasta tossed in aged parmesan emulsion with black truffle essence.',
+        img: 'farfalle_pasta_ar.png',
+        inStock: true
+      }
+    ];
+
+    let currentStep = 1;
+    let selectedPlanKey = 'growth';
+    let appDishes = JSON.parse(localStorage.getItem('smartmenu_dishes')) || defaultDishes;
+    let appRestaurant = JSON.parse(localStorage.getItem('smartmenu_restaurant')) || defaultRestaurant;
+
+    /* --- VIEW MANAGEMENT --- */
+    window.showLandingView = function() {
+      const landing = document.getElementById('landing-view');
+      if (landing) landing.style.display = 'block';
+      const dash = document.getElementById('dashboard-view');
+      if (dash) dash.classList.remove('active');
+      closeRegistrationModal();
+      closeLoginModal();
+      window.location.hash = '';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    window.showDashboardView = async function(tab = 'overview') {
+      // Hide landing IMMEDIATELY before any async work (prevents landing flash)
+      const landing = document.getElementById('landing-view');
+      if (landing) landing.style.display = 'none';
+
+      // Security Check: Only registered and logged-in owners can view the dashboard
+      const currentUser = await window.SmartMenuDB.getCurrentUser();
+      if (!currentUser) {
+        if (landing) landing.style.display = 'block'; // restore if rejected
+        openLoginModal();
+        const errEl = document.getElementById('login-error-msg');
+        if (errEl) {
+          errEl.style.display = 'block';
+          errEl.textContent = '🔒 Access Restricted: Please sign in with your registered restaurant account to view the dashboard.';
+        }
+        return;
+      }
+
+      const dash = document.getElementById('dashboard-view');
+      if (dash) dash.classList.add('active');
+      closeRegistrationModal();
+      closeLoginModal();
+      window.location.hash = 'dashboard';
+      renderDashboard();
+      switchDashboardTab(tab);
+      window.scrollTo(0, 0);
+    };
+
+    /* --- LOGIN MODAL --- */
+    window.openLoginModal = function(e) {
+      if (e && e.preventDefault) e.preventDefault();
+      const modal = document.getElementById('login-modal');
+      if (modal) {
+        modal.classList.add('active');
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      }
+      return false;
+    };
+
+    window.closeLoginModal = function() {
+      const modal = document.getElementById('login-modal');
+      if (modal) {
+        modal.classList.remove('active');
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    };
+
+    window.handleLoginSubmit = async function(e) {
+      if (e) e.preventDefault();
+      const emailInput = document.getElementById('login-email-input');
+      const passInput = document.getElementById('login-pass-input');
+      const errEl = document.getElementById('login-error-msg');
+      const submitBtn = document.getElementById('login-submit-btn') || document.querySelector('#login-modal-form button[type="submit"]');
+
+      if (errEl) { errEl.style.display = 'none'; errEl.textContent = ''; }
+
+      const email = emailInput?.value?.trim();
+      const password = passInput?.value;
+
+      if (!email || !password) {
+        if (errEl) {
+          errEl.style.display = 'block';
+          errEl.textContent = 'Please enter both your registered email and password.';
+        }
+        return;
+      }
+
+      const origBtnText = submitBtn ? submitBtn.innerHTML : '';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = 'Verifying credentials...';
+      }
+
+      try {
+        const res = await window.SmartMenuDB.signInOwner(email, password);
+        if (res && res.restaurant) {
+          appRestaurant = res.restaurant;
+          localStorage.setItem('smartmenu_restaurant', JSON.stringify(appRestaurant));
+        }
+        closeLoginModal();
+        await showDashboardView('overview');
+      } catch (err) {
+        if (errEl) {
+          errEl.style.display = 'block';
+          errEl.textContent = err.message || 'Access Denied: Invalid email or password. Only registered restaurant owners can log in.';
+        }
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = origBtnText;
+        }
+      }
+    };
+
+    window.handleLogout = async function() {
+      if (window.SmartMenuDB) {
+        await window.SmartMenuDB.signOut();
+      }
+      showLandingView();
+      alert('You have successfully logged out.');
+    };
+
+    /* --- REGISTRATION ONBOARDING --- */
+    window.openRegistrationModal = function(step = 1) {
+      if (typeof step !== 'number') step = 1;
+      const modal = document.getElementById('registration-modal');
+      if (modal) {
+        modal.classList.add('active');
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+        goToStep(step);
+      }
+      return false;
+    };
+
+    window.closeRegistrationModal = function() {
+      const modal = document.getElementById('registration-modal');
+      if (modal) {
+        modal.classList.remove('active');
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    };
+
+    window.goToStep = function(step) {
+      currentStep = step;
+      const modal = document.getElementById('registration-modal');
+      if (!modal) return;
+
+      const steps = modal.querySelectorAll('.step-content');
+      steps.forEach(s => s.classList.remove('active'));
+
+      const targetEl = document.getElementById('step-' + step);
+      if (targetEl) targetEl.classList.add('active');
+
+      // Update Sidebar progress steps
+      for (let i = 1; i <= 4; i++) {
+        const ps = document.getElementById('progress-step-' + i);
+        if (ps) {
+          ps.classList.remove('active', 'completed');
+          if (step === 'success') {
+            // Screen 5: ALL 4 STEPS COMPLETED
+            ps.classList.add('completed');
+          } else if (i < step) {
+            ps.classList.add('completed');
+          } else if (i === step) {
+            ps.classList.add('active');
+          }
+        }
+      }
+
+      const mc = modal.querySelector('.onboarding-main');
+      if (mc) mc.scrollTop = 0;
+    };
+
+    window.nextStep = function() {
+      if (currentStep < 4) {
+        goToStep(currentStep + 1);
+      }
+    };
+
+    window.previousStep = function() {
+      if (currentStep > 1) {
+        goToStep(currentStep - 1);
+      }
+    };
+
+    // Plan Selection in Step 3
+    window.selectPlanCard = function(el, planKey) {
+      document.querySelectorAll('.figma-plan-card').forEach(c => {
+        c.classList.remove('active');
+        c.querySelector('.custom-radio')?.classList.remove('checked');
+      });
+
+      el.classList.add('active');
+      el.querySelector('.custom-radio')?.classList.add('checked');
+      selectedPlanKey = planKey;
+
+      const planDetails = {
+        starter: { name: 'Starter annual plan', price: '₹18,000', tax: '₹3,240', total: '₹21,240', due: '₹18,000 + taxes' },
+        growth: { name: 'Growth annual plan', price: '₹36,000', tax: '₹6,480', total: '₹42,480', due: '₹36,000 + taxes' },
+        premium: { name: 'Premium annual plan', price: '₹72,000', tax: '₹12,960', total: '₹84,960', due: '₹72,000 + taxes' }
+      };
+
+      const sel = planDetails[planKey] || planDetails.growth;
+      appRestaurant.plan = planKey.charAt(0).toUpperCase() + planKey.slice(1) + ' · Annual';
+
+      // Update Summary box in step 3
+      const dueEl = document.getElementById('summary-total-due');
+      if (dueEl) dueEl.textContent = sel.due;
+
+      // Update Step 4 Order Summary
+      const planNameEl = document.getElementById('summary-plan-name');
+      if (planNameEl) planNameEl.textContent = sel.name;
+      const planPriceEl = document.getElementById('summary-plan-price');
+      if (planPriceEl) planPriceEl.textContent = sel.price;
+      const taxEl = document.getElementById('summary-taxes');
+      if (taxEl) taxEl.textContent = sel.tax;
+      const totalEl = document.getElementById('summary-total-price');
+      if (totalEl) totalEl.textContent = sel.total;
+    };
+
+    window.registrationData = {
+      ownerName: 'Aarav Mehta',
+      ownerEmail: 'owner@restaurant.com',
+      ownerPhone: '+91 98765 43210',
+      password: 'password123',
+      name: 'Nara House',
+      cuisine: 'Modern Indian',
+      description: 'Modern progressive Indian dining celebrating regional spices.',
+      address: '24 Residency Road',
+      city: 'Bengaluru',
+      postalCode: '560025',
+      contactNumber: '+91 80 1234 5678',
+      restaurantEmail: 'hello@narahouse.in',
+      website: 'narahouse.in',
+      outlets: 1,
+      openingHours: '12:00-23:00',
+      plan: 'Growth · Annual',
+      logo: null
+    };
+
+    // When clicking "Set up my menu" on Screen 5
+    window.completeAndOpenDashboard = function() {
+      // Skip auth check — user just registered so they ARE logged in. No lag.
+      const landing = document.getElementById('landing-view');
+      if (landing) landing.style.display = 'none';
+      const modal = document.getElementById('registration-modal');
+      if (modal) { modal.classList.remove('active'); modal.style.display = 'none'; }
+      document.body.style.overflow = '';
+      const dash = document.getElementById('dashboard-view');
+      if (dash) dash.classList.add('active');
+      window.location.hash = 'dashboard';
+      renderDashboard();
+      switchDashboardTab('menu');
+      window.scrollTo(0, 0);
+    };
+
+    /* --- FORM SUBMISSION WIRING --- */
+    function initOnboarding() {
+      const f1 = document.getElementById('form-step-1');
+      if (f1) {
+        f1.onsubmit = function(e) {
+          e.preventDefault();
+          const p1 = document.getElementById('password').value;
+          const p2 = document.getElementById('confirm-password').value;
+          if (!p1 || !p2) { alert('Please enter both passwords.'); return false; }
+          if (p1 !== p2) { alert('Passwords do not match. Please re-enter.'); return false; }
+          if (p1.length < 8) { alert('Password must be at least 8 characters long.'); return false; }
+          if (!document.getElementById('terms-accept').checked) { alert('Please accept the Terms to continue.'); return false; }
+
+          window.registrationData.ownerName = document.getElementById('owner-name')?.value?.trim() || 'Aarav Mehta';
+          window.registrationData.ownerEmail = document.getElementById('business-email')?.value?.trim() || 'owner@restaurant.com';
+          window.registrationData.ownerPhone = document.getElementById('mobile-number')?.value?.trim() || '+91 98765 43210';
+          window.registrationData.password = p1;
+
+          nextStep();
+          return false;
+        };
+      }
+
+      const f2 = document.getElementById('form-step-2');
+      if (f2) {
+        f2.onsubmit = function(e) {
+          e.preventDefault();
+          const name = document.getElementById('restaurant-name')?.value?.trim() || 'Nara House';
+          window.registrationData.name = name;
+          window.registrationData.cuisine = document.getElementById('cuisine-category')?.value || 'Modern Indian';
+          window.registrationData.description = document.getElementById('description')?.value?.trim() || '';
+          window.registrationData.address = document.getElementById('full-address')?.value?.trim() || '';
+          window.registrationData.city = document.getElementById('city')?.value?.trim() || 'Bengaluru';
+          window.registrationData.postalCode = document.getElementById('postal-code')?.value?.trim() || '';
+          window.registrationData.contactNumber = document.getElementById('contact-number')?.value?.trim() || window.registrationData.ownerPhone;
+          window.registrationData.restaurantEmail = document.getElementById('restaurant-email')?.value?.trim() || window.registrationData.ownerEmail;
+          window.registrationData.website = document.getElementById('website')?.value?.trim() || '';
+          window.registrationData.outlets = parseInt(document.getElementById('tables')?.value) || 1;
+          window.registrationData.openingHours = document.getElementById('operating-hours')?.value || '12:00-23:00';
+          window.registrationData.logo = appRestaurant.logo || null;
+
+          appRestaurant.name = name;
+          nextStep();
+          return false;
+        };
+      }
+
+      const f3 = document.getElementById('form-step-3');
+      if (f3) {
+        f3.onsubmit = function(e) {
+          e.preventDefault();
+          window.registrationData.plan = appRestaurant.plan || 'Growth · Annual';
+          nextStep();
+          return false;
+        };
+      }
+
+      const f4 = document.getElementById('form-step-4');
+      if (f4) {
+        f4.onsubmit = async function(e) {
+          e.preventDefault();
+
+          // IMMEDIATELY show success screen - no loading text on button
+          goToStep('success');
+
+          // Update details on success screen right away
+          const name = window.registrationData.name || 'Nara House';
+          const nameEl = document.getElementById('success-restaurant-name');
+          if (nameEl) nameEl.textContent = name;
+          const infoName = document.getElementById('success-info-restaurant');
+          if (infoName) infoName.textContent = name;
+          const infoPlan = document.getElementById('success-info-plan');
+          if (infoPlan) infoPlan.textContent = window.registrationData.plan || 'Growth · Annual';
+
+          // Register in database silently in the background (no ugly button text)
+          try {
+            console.log('[SmartMenu] Committing registration data to Supabase:', window.registrationData);
+            const result = await window.SmartMenuDB.registerRestaurantAndOwner(window.registrationData);
+            if (result && result.restaurant) {
+              appRestaurant = result.restaurant;
+              localStorage.setItem('smartmenu_restaurant', JSON.stringify(appRestaurant));
+            }
+            console.log('[SmartMenu] Registration successful in database!');
+          } catch (err) {
+            console.error('[SmartMenu] Database registration error:', err);
+          }
+
+          return false;
+        };
+      }
+
+      // Logo upload
+      const li = document.getElementById('logo-input');
+      const lp = document.getElementById('logo-preview');
+      if (li && lp) {
+        li.onchange = function(e) {
+          const file = e.target.files[0];
+          if (file && file.type.startsWith('image/')) {
+            const reader = new FileReader();
+            reader.onload = function(ev) {
+              lp.innerHTML = `<img src="${ev.target.result}" alt="Logo" style="width:100%; height:100%; object-fit:cover; border-radius:50%;" />`;
+              appRestaurant.logo = ev.target.result;
+            };
+            reader.readAsDataURL(file);
+          }
+        };
+      }
+    }
+
+    /* --- DASHBOARD FUNCTIONALITY --- */
+    window.renderDashboard = function() {
+      const ownerName = appRestaurant.owner ? appRestaurant.owner.split(' ')[0] : 'Owner';
+      const ownerGreetingEl = document.getElementById('dash-owner-greeting');
+      if (ownerGreetingEl) ownerGreetingEl.textContent = ownerName;
+
+      const nameEls = ['dash-sidebar-name', 'modal-rest-name', 'set-rest-name'];
+      nameEls.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+          if (el.tagName === 'INPUT') el.value = appRestaurant.name;
+          else el.textContent = appRestaurant.name;
+        }
+      });
+
+      const qrTitle = document.getElementById('qr-rest-title');
+      if (qrTitle) qrTitle.textContent = `${appRestaurant.name} · Table 08`;
+
+      const addrEls = ['dash-sidebar-addr', 'set-address'];
+      addrEls.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+          if (el.tagName === 'INPUT') el.value = appRestaurant.address || 'Residency Road';
+          else el.textContent = (appRestaurant.address || 'Residency Road').split(',')[0];
+        }
+      });
+
+      const firstLetter = (appRestaurant.name || 'N').charAt(0).toUpperCase();
+      const avatarEls = ['dash-sidebar-avatar', 'modal-rest-avatar', 'dash-user-avatar'];
+      avatarEls.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = firstLetter;
+      });
+
+      const planEl = document.getElementById('dash-topbar-plan');
+      if (planEl) planEl.textContent = `${appRestaurant.plan || 'Growth plan'} · Active`;
+
+      const totalDishesEl = document.getElementById('overview-total-dishes');
+      if (totalDishesEl) totalDishesEl.textContent = appDishes.length;
+
+      const mgmtCountEl = document.getElementById('mgmt-dish-count');
+      if (mgmtCountEl) mgmtCountEl.textContent = `${appDishes.length} dishes`;
+
+      const modalCountEl = document.getElementById('modal-dishes-count');
+      if (modalCountEl) modalCountEl.textContent = `${appDishes.length} dishes`;
+
+      renderDashboardMenuGrid('All');
+      renderPreviewMenuDishes('All');
+    };
+
+    window.switchDashboardTab = function(tabName) {
+      document.querySelectorAll('.dash-nav-item').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.tab === tabName);
+      });
+      document.querySelectorAll('.dash-tab-pane').forEach(pane => {
+        pane.classList.remove('active');
+      });
+      const activePane = document.getElementById('tab-' + tabName);
+      if (activePane) activePane.classList.add('active');
+    };
+
+    window.renderDashboardMenuGrid = function(filterCat = 'All', searchFilter = '') {
+      const tableBody = document.getElementById('dash-menu-table-body');
+      if (!tableBody) return;
+
+      let filtered = appDishes;
+      if (filterCat && filterCat !== 'All') {
+        filtered = filtered.filter(d => d.category && d.category.toLowerCase().includes(filterCat.toLowerCase()));
+      }
+      if (searchFilter) {
+        const q = searchFilter.toLowerCase().trim();
+        filtered = filtered.filter(d => 
+          (d.name && d.name.toLowerCase().includes(q)) || 
+          (d.category && d.category.toLowerCase().includes(q)) ||
+          (d.desc && d.desc.toLowerCase().includes(q))
+        );
+      }
+
+      const countEl = document.getElementById('mgmt-dish-count');
+      if (countEl) countEl.textContent = `${filtered.length} dishes`;
+
+      if (filtered.length === 0) {
+        tableBody.innerHTML = '<tr><td colspan="6" style="text-align: center; padding: 40px; color: #6B7280;">No dishes found matching your criteria.</td></tr>';
+        return;
+      }
+
+      tableBody.innerHTML = filtered.map(dish => `
+        <tr>
+          <td class="drag-handle-cell">⋮⋮</td>
+          <td>
+            <div class="dish-cell-content">
+              <img src="${dish.img}" alt="${dish.name}" class="dish-table-thumb" onerror="this.src='saffron_butter_chicken.png'" />
+              <div>
+                <div class="dish-table-title">${dish.name}</div>
+                <span class="diet-pill ${dish.diet === 'Non-Veg' ? 'nonveg' : ''}">${dish.diet || 'Veg'} · ${dish.diet === 'Non-Veg' ? 'Non-Vegetarian' : 'Vegetarian'}</span>
+              </div>
+            </div>
+          </td>
+          <td>
+            <a href="#" class="category-link" onclick="filterByCategory('${dish.category}'); return false;">${dish.category}</a>
+          </td>
+          <td>
+            <span class="dish-table-price">₹${dish.price}</span>
+          </td>
+          <td>
+            <div class="availability-cell">
+              <label class="switch-toggle-btn">
+                <input type="checkbox" ${dish.inStock ? 'checked' : ''} onchange="toggleDishStock('${dish.id}', this.checked)">
+                <span class="toggle-slider"></span>
+              </label>
+              <span class="availability-label ${dish.inStock ? '' : 'sold-out'}" id="avail-label-${dish.id}">
+                ${dish.inStock ? 'Available' : 'Sold out'}
+              </span>
+            </div>
+          </td>
+          <td style="text-align: right;">
+            <button class="btn-table-more" onclick="deleteDashboardDish('${dish.id}', '${filterCat}')" title="Delete Dish">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 4h10M6 4V2h4v2m-6 3v7h8V7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            </button>
+          </td>
+        </tr>
+      `).join('');
+    };
+
+    window.filterMenuTable = function() {
+      const cat = document.getElementById('mgmt-cat-select')?.value || 'All';
+      const avail = document.getElementById('mgmt-avail-select')?.value || 'All';
+      const search = document.getElementById('menu-mgmt-search-input')?.value || '';
+
+      let filtered = appDishes;
+      if (cat !== 'All') {
+        filtered = filtered.filter(d => d.category && d.category.toLowerCase().includes(cat.toLowerCase()));
+      }
+      if (avail === 'Available') {
+        filtered = filtered.filter(d => d.inStock);
+      } else if (avail === 'SoldOut') {
+        filtered = filtered.filter(d => !d.inStock);
+      }
+      if (search) {
+        const q = search.toLowerCase().trim();
+        filtered = filtered.filter(d => 
+          (d.name && d.name.toLowerCase().includes(q)) || 
+          (d.category && d.category.toLowerCase().includes(q))
+        );
+      }
+
+      const tableBody = document.getElementById('dash-menu-table-body');
+      const countEl = document.getElementById('mgmt-dish-count');
+      if (countEl) countEl.textContent = `${filtered.length} dishes`;
+      if (!tableBody) return;
+
+      if (filtered.length === 0) {
+        tableBody.innerHTML = '<tr><td colspan="6" style="text-align: center; padding: 40px; color: #6B7280;">No dishes found matching your criteria.</td></tr>';
+        return;
+      }
+
+      tableBody.innerHTML = filtered.map(dish => `
+        <tr>
+          <td class="drag-handle-cell">⋮⋮</td>
+          <td>
+            <div class="dish-cell-content">
+              <img src="${dish.img}" alt="${dish.name}" class="dish-table-thumb" onerror="this.src='saffron_butter_chicken.png'" />
+              <div>
+                <div class="dish-table-title">${dish.name}</div>
+                <span class="diet-pill ${dish.diet === 'Non-Veg' ? 'nonveg' : ''}">${dish.diet || 'Veg'} · ${dish.diet === 'Non-Veg' ? 'Non-Vegetarian' : 'Vegetarian'}</span>
+              </div>
+            </div>
+          </td>
+          <td>
+            <a href="#" class="category-link" onclick="filterByCategory('${dish.category}'); return false;">${dish.category}</a>
+          </td>
+          <td>
+            <span class="dish-table-price">₹${dish.price}</span>
+          </td>
+          <td>
+            <div class="availability-cell">
+              <label class="switch-toggle-btn">
+                <input type="checkbox" ${dish.inStock ? 'checked' : ''} onchange="toggleDishStock('${dish.id}', this.checked)">
+                <span class="toggle-slider"></span>
+              </label>
+              <span class="availability-label ${dish.inStock ? '' : 'sold-out'}" id="avail-label-${dish.id}">
+                ${dish.inStock ? 'Available' : 'Sold out'}
+              </span>
+            </div>
+          </td>
+          <td style="text-align: right;">
+            <button class="btn-table-more" onclick="deleteDashboardDish('${dish.id}')" title="Delete Dish">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 4h10M6 4V2h4v2m-6 3v7h8V7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            </button>
+          </td>
+        </tr>
+      `).join('');
+    };
+
+    window.filterByCategory = function(category) {
+      const sel = document.getElementById('mgmt-cat-select');
+      if (sel) {
+        sel.value = category;
+        filterMenuTable();
+      }
+    };
+
+    window.toggleDishStock = function(dishId, isChecked) {
+      const dish = appDishes.find(d => d.id === dishId);
+      if (dish) {
+        dish.inStock = isChecked;
+        localStorage.setItem('smartmenu_dishes', JSON.stringify(appDishes));
+        const label = document.getElementById('avail-label-' + dishId);
+        if (label) {
+          label.textContent = isChecked ? 'Available' : 'Sold out';
+          label.className = `availability-label ${isChecked ? '' : 'sold-out'}`;
+        }
+      }
+      if (window.SmartMenuDB) {
+        window.SmartMenuDB.toggleDishStock(dishId, isChecked);
+      }
+    };
+
+    window.deleteDashboardDish = async function(dishId, currentFilter = 'All') {
+      if (!confirm('Are you sure you want to delete this dish?')) return;
+      if (window.SmartMenuDB) {
+        try {
+          await window.SmartMenuDB.deleteDish(dishId);
+        } catch (err) {
+          console.warn('DB delete error:', err.message);
+        }
+      }
+      appDishes = appDishes.filter(d => d.id !== dishId);
+      localStorage.setItem('smartmenu_dishes', JSON.stringify(appDishes));
+      renderDashboard();
+    };
+
+    /* --- GUEST PREVIEW MODAL FUNCTIONS --- */
+    window.openPreviewMenuModal = function() {
+      const modal = document.getElementById('preview-menu-modal');
+      if (modal) {
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        renderPreviewMenuDishes();
+      }
+    };
+
+    window.closePreviewMenuModal = function() {
+      const modal = document.getElementById('preview-menu-modal');
+      if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    };
+
+    window.renderPreviewMenuDishes = function(cat = 'All', search = '') {
+      const grid = document.getElementById('modal-dishes-grid');
+      if (!grid) return;
+
+      let list = appDishes;
+      if (cat && cat !== 'All' && cat !== 'Featured') {
+        list = list.filter(d => d.category && d.category.toLowerCase().includes(cat.toLowerCase()));
+      }
+      if (search) {
+        const q = search.toLowerCase();
+        list = list.filter(d => (d.name && d.name.toLowerCase().includes(q)) || (d.desc && d.desc.toLowerCase().includes(q)));
+      }
+
+      grid.innerHTML = list.map(dish => `
+        <div class="preview-dish-card">
+          <div class="preview-dish-img-wrap">
+            <img src="${dish.img}" alt="${dish.name}" class="preview-dish-img" onerror="this.src='saffron_butter_chicken.png'" />
+          </div>
+          <div class="preview-dish-body">
+            <div class="preview-dish-name">${dish.name}</div>
+            <p class="preview-dish-desc">${dish.desc || ''}</p>
+            <div class="preview-dish-price-row">
+              <span class="preview-dish-price">₹${dish.price}</span>
+              <button class="preview-btn-ar" onclick="alert('Viewing in AR: Pointing phone camera at your dining table.')">
+                <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5" fill="none"/><circle cx="8" cy="8" r="2"/></svg>
+                View in AR
+              </button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    };
+
+    window.filterPreviewCat = function(category, btn) {
+      document.querySelectorAll('.preview-cat-pill').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      renderPreviewMenuDishes(category);
+    };
+
+    window.handlePreviewSearch = function(val) {
+      renderPreviewMenuDishes('All', val);
+    };
+
+    /* --- THEMES & QR UTILITY FUNCTIONS --- */
+    window.selectMenuTheme = function(themeName, cardEl) {
+      document.querySelectorAll('.theme-preset-card').forEach(c => c.classList.remove('selected'));
+      if (cardEl) cardEl.classList.add('selected');
+      document.querySelectorAll('.theme-badge-applied').forEach(b => b.style.display = 'none');
+      if (cardEl) {
+        const b = cardEl.querySelector('.theme-badge-applied');
+        if (b) b.style.display = 'inline-block';
+      }
+    };
+
+    window.selectBrandAccent = function(color, swatchEl) {
+      document.querySelectorAll('.color-swatch-circle').forEach(s => s.classList.remove('active'));
+      if (swatchEl) swatchEl.classList.add('active');
+      const demoDot = document.getElementById('theme-preview-dot');
+      if (demoDot) demoDot.style.background = color;
+    };
+
+    window.selectMenuLayout = function(layoutName, btn) {
+      document.querySelectorAll('.layout-toggle-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+    };
+
+    window.copyQrUrl = function() {
+      const input = document.getElementById('qr-share-url');
+      if (input) {
+        input.select();
+        navigator.clipboard.writeText(input.value).then(() => {
+          alert('Copied link to clipboard: ' + input.value);
+        }).catch(() => {
+          alert('Copied link: ' + input.value);
+        });
+      }
+    };
+
+    window.handleSettingsSave = async function(e) {
+      if (e) e.preventDefault();
+      appRestaurant.name = document.getElementById('set-rest-name').value;
+      appRestaurant.cuisine = document.getElementById('set-cuisine').value;
+      appRestaurant.owner = document.getElementById('set-owner').value;
+      appRestaurant.email = document.getElementById('set-email').value;
+      appRestaurant.tables = parseInt(document.getElementById('set-tables').value) || 25;
+      appRestaurant.hours = document.getElementById('set-hours').value;
+      appRestaurant.address = document.getElementById('set-address').value;
+
+      localStorage.setItem('smartmenu_restaurant', JSON.stringify(appRestaurant));
+
+      if (window.SmartMenuDB && window.SmartMenuDB.isConnected) {
+        try {
+          await window.SmartMenuDB.saveRestaurant(appRestaurant);
+        } catch (err) {
+          console.warn('DB settings save error:', err.message);
+        }
+      }
+
+      renderDashboard();
+      alert('✓ Restaurant Profile settings saved successfully!');
+    };
+
+    /* --- SUPABASE & CLOUD DISH MANAGEMENT --- */
+    window.initSupabaseUI = function() {
+      if (!window.SmartMenuDB) return;
+      const config = window.SmartMenuDB.getConfig();
+      const urlInput = document.getElementById('db-supabase-url');
+      const keyInput = document.getElementById('db-supabase-key');
+      if (urlInput && config.url) urlInput.value = config.url;
+      if (keyInput && config.anonKey) keyInput.value = config.anonKey;
+
+      updateDbStatusUI(window.SmartMenuDB.isConnected);
+    };
+
+    window.updateDbStatusUI = function(connected) {
+      const badge = document.getElementById('db-status-badge');
+      const dot = document.getElementById('db-status-dot');
+      const text = document.getElementById('db-status-text');
+      if (!badge || !dot || !text) return;
+
+      if (connected) {
+        badge.style.background = '#ECFDF5';
+        badge.style.color = '#065F46';
+        dot.style.background = '#10B981';
+        text.textContent = '🟢 Connected to Supabase';
+      } else {
+        badge.style.background = '#FEF3C7';
+        badge.style.color = '#92400E';
+        dot.style.background = '#F59E0B';
+        text.textContent = '🟡 Demo Mode (Local)';
+      }
+    };
+
+    window.handleSupabaseSave = async function(e) {
+      if (e) e.preventDefault();
+      const url = document.getElementById('db-supabase-url')?.value.trim();
+      const key = document.getElementById('db-supabase-key')?.value.trim();
+      const resEl = document.getElementById('db-test-result');
+
+      if (!url || !key) {
+        alert('Please provide both your Supabase URL and Anon Key.');
+        return;
+      }
+
+      if (resEl) {
+        resEl.style.display = 'block';
+        resEl.style.background = '#EFF6FF';
+        resEl.style.color = '#1E40AF';
+        resEl.textContent = 'Connecting to Supabase...';
+      }
+
+      try {
+        const ok = await window.SmartMenuDB.saveConfig(url, key);
+        if (ok) {
+          updateDbStatusUI(true);
+          if (resEl) {
+            resEl.style.background = '#ECFDF5';
+            resEl.style.color = '#065F46';
+            resEl.textContent = '✓ Successfully connected to live Supabase database! Syncing dishes...';
+          }
+          await loadDashboardDishes();
+        } else {
+          updateDbStatusUI(false);
+          if (resEl) {
+            resEl.style.background = '#FEF2F2';
+            resEl.style.color = '#991B1B';
+            resEl.textContent = '⚠️ Connected to Supabase URL, but dishes/restaurants table was not found. Please ensure you ran supabase-schema.sql in the Supabase SQL Editor.';
+          }
+        }
+      } catch (err) {
+        updateDbStatusUI(false);
+        if (resEl) {
+          resEl.style.background = '#FEF2F2';
+          resEl.style.color = '#991B1B';
+          resEl.textContent = '✕ Connection failed: ' + err.message;
+        }
+      }
+    };
+
+    window.testSupabaseConnection = async function() {
+      const url = document.getElementById('db-supabase-url')?.value.trim();
+      const key = document.getElementById('db-supabase-key')?.value.trim();
+      const resEl = document.getElementById('db-test-result');
+      if (!url || !key) {
+        alert('Please enter your Supabase URL and Anon Key first.');
+        return;
+      }
+
+      if (resEl) {
+        resEl.style.display = 'block';
+        resEl.style.background = '#EFF6FF';
+        resEl.style.color = '#1E40AF';
+        resEl.textContent = 'Testing connection to Supabase...';
+      }
+
+      try {
+        const data = await window.SmartMenuDB.testConnection(url, key);
+        if (resEl) {
+          resEl.style.background = '#ECFDF5';
+          resEl.style.color = '#065F46';
+          resEl.textContent = '✓ Connection ping successful! Reachable tables verified.';
+        }
+      } catch (err) {
+        if (resEl) {
+          resEl.style.background = '#FEF2F2';
+          resEl.style.color = '#991B1B';
+          resEl.textContent = '✕ Connection test failed: ' + err.message;
+        }
+      }
+    };
+
+    window.resetSupabaseToDemo = function() {
+      if (confirm('Reset to local demo mode?')) {
+        localStorage.removeItem('smartmenu_supabase_url');
+        localStorage.removeItem('smartmenu_supabase_anon_key');
+        if (document.getElementById('db-supabase-url')) document.getElementById('db-supabase-url').value = '';
+        if (document.getElementById('db-supabase-key')) document.getElementById('db-supabase-key').value = '';
+        const resEl = document.getElementById('db-test-result');
+        if (resEl) resEl.style.display = 'none';
+        updateDbStatusUI(false);
+        if (window.SmartMenuDB) window.SmartMenuDB.isConnected = false;
+        alert('Switched back to local demo storage.');
+      }
+    };
+
+    window.loadDashboardDishes = async function() {
+      if (window.SmartMenuDB) {
+        try {
+          const dbDishes = await window.SmartMenuDB.getDishes();
+          if (dbDishes && dbDishes.length > 0) {
+            appDishes = dbDishes;
+            localStorage.setItem('smartmenu_dishes', JSON.stringify(appDishes));
+          }
+        } catch (err) {
+          console.warn('Dishes load error:', err.message);
+        }
+      }
+      renderDashboardMenuGrid('All');
+      renderSimulatorDishes();
+      const activeCount = document.getElementById('stat-active-dishes');
+      if (activeCount) activeCount.textContent = appDishes.filter(d => d.inStock).length;
+    };
+
+    /* --- ADD DISH MODAL FUNCTIONS --- */
+    window.openAddDishModal = function() {
+      const modal = document.getElementById('add-dish-modal');
+      if (modal) {
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      }
+    };
+
+    window.closeAddDishModal = function() {
+      const modal = document.getElementById('add-dish-modal');
+      if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    };
+
+    window.toggleCustomImgInput = function(val) {
+      const customInput = document.getElementById('new-dish-custom-img');
+      if (customInput) {
+        customInput.style.display = (val === 'custom') ? 'block' : 'none';
+      }
+    };
+
+    window.handleAddNewDish = async function(e) {
+      if (e) e.preventDefault();
+      const name = document.getElementById('new-dish-name')?.value.trim();
+      const category = document.getElementById('new-dish-category')?.value;
+      const diet = document.getElementById('new-dish-diet')?.value;
+      const price = parseFloat(document.getElementById('new-dish-price')?.value) || 0;
+      const desc = document.getElementById('new-dish-desc')?.value.trim();
+      const preset = document.getElementById('new-dish-img-preset')?.value;
+      const customImg = document.getElementById('new-dish-custom-img')?.value.trim();
+      const modelUrl = document.getElementById('new-dish-model')?.value.trim();
+
+      const img = (preset === 'custom' && customImg) ? customImg : preset;
+
+      if (!name || !price) {
+        alert('Please fill out the dish name and price.');
+        return;
+      }
+
+      const dishObj = {
+        name,
+        category,
+        diet,
+        price,
+        desc,
+        img,
+        modelUrl,
+        inStock: true
+      };
+
+      try {
+        let createdDish = dishObj;
+        if (window.SmartMenuDB) {
+          createdDish = await window.SmartMenuDB.addDish(dishObj);
+        }
+        appDishes.unshift(createdDish);
+        localStorage.setItem('smartmenu_dishes', JSON.stringify(appDishes));
+
+        renderDashboard();
+        closeAddDishModal();
+        document.getElementById('add-dish-form')?.reset();
+        alert('Dish "' + name + '" successfully published to the menu!');
+      } catch (err) {
+        alert('Error saving dish: ' + err.message);
+      }
+    };
+
+    /* --- INITIALIZATION --- */
+    document.addEventListener('DOMContentLoaded', function() {
+      initOnboarding();
+      initSupabaseUI();
+    });
+
+    window.addEventListener('load', function() {
+      initOnboarding();
+      initSupabaseUI();
+      loadDashboardDishes();
+
+      const hash = window.location.hash;
+      if (hash === '#dashboard') {
+        showDashboardView('overview');
+      } else if (hash === '#login') {
+        openLoginModal();
+      } else if (hash === '#register') {
+        openRegistrationModal(1);
+      }
+    });
+
+    window.addEventListener('hashchange', function() {
+      const hash = window.location.hash;
+      if (hash === '#dashboard') showDashboardView();
+      else if (hash === '#login') openLoginModal();
+      else if (hash === '#register') openRegistrationModal(1);
+      else if (!hash || hash === '#home') showLandingView();
+    });
+  </script>
+  <!-- ADD DISH MODAL -->
+  <div id="add-dish-modal" class="modal-backdrop" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 99999; align-items: center; justify-content: center; backdrop-filter: blur(4px);">
+    <div style="background: #fff; width: 100%; max-width: 520px; border-radius: 16px; padding: 28px; box-shadow: 0 20px 40px rgba(0,0,0,0.2); max-height: 90vh; overflow-y: auto;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+        <h3 style="font-family: 'Playfair Display', serif; font-size: 22px; margin: 0; color: #111827;">Add New 3D AR Dish</h3>
+        <button type="button" onclick="closeAddDishModal()" style="background: none; border: none; font-size: 20px; cursor: pointer; color: #6B7280;">✕</button>
+      </div>
+      <form id="add-dish-form" onsubmit="handleAddNewDish(event)">
+        <div style="margin-bottom: 14px;">
+          <label for="new-dish-name" style="display: block; font-size: 13px; font-weight: 600; color: #374151; margin-bottom: 6px;">Dish Name</label>
+          <input type="text" id="new-dish-name" placeholder="e.g. Truffle Burrata Risotto" required style="width: 100%; padding: 10px 12px; border: 1px solid #D1D5DB; border-radius: 8px; font-size: 14px;" />
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px;">
+          <div>
+            <label for="new-dish-category" style="display: block; font-size: 13px; font-weight: 600; color: #374151; margin-bottom: 6px;">Category</label>
+            <select id="new-dish-category" style="width: 100%; padding: 10px 12px; border: 1px solid #D1D5DB; border-radius: 8px; font-size: 14px;">
+              <option value="Mains">Mains</option>
+              <option value="Starters">Starters</option>
+              <option value="Bowls">Bowls & Salads</option>
+              <option value="Desserts">Desserts</option>
+              <option value="Beverages">Beverages</option>
+            </select>
+          </div>
+          <div>
+            <label for="new-dish-diet" style="display: block; font-size: 13px; font-weight: 600; color: #374151; margin-bottom: 6px;">Diet Type</label>
+            <select id="new-dish-diet" style="width: 100%; padding: 10px 12px; border: 1px solid #D1D5DB; border-radius: 8px; font-size: 14px;">
+              <option value="Veg">Vegetarian</option>
+              <option value="Non-Veg">Non-Vegetarian</option>
+              <option value="Vegan">Vegan</option>
+              <option value="Egg">Contains Egg</option>
+            </select>
+          </div>
+        </div>
+        <div style="margin-bottom: 14px;">
+          <label for="new-dish-price" style="display: block; font-size: 13px; font-weight: 600; color: #374151; margin-bottom: 6px;">Price (₹)</label>
+          <input type="number" id="new-dish-price" placeholder="480" required min="1" style="width: 100%; padding: 10px 12px; border: 1px solid #D1D5DB; border-radius: 8px; font-size: 14px;" />
+        </div>
+        <div style="margin-bottom: 14px;">
+          <label for="new-dish-desc" style="display: block; font-size: 13px; font-weight: 600; color: #374151; margin-bottom: 6px;">Description</label>
+          <textarea id="new-dish-desc" rows="2" placeholder="Describe fresh ingredients, aromas, and culinary technique..." style="width: 100%; padding: 10px 12px; border: 1px solid #D1D5DB; border-radius: 8px; font-size: 14px; resize: vertical;"></textarea>
+        </div>
+        <div style="margin-bottom: 14px;">
+          <label for="new-dish-img-preset" style="display: block; font-size: 13px; font-weight: 600; color: #374151; margin-bottom: 6px;">Dish Image</label>
+          <select id="new-dish-img-preset" onchange="toggleCustomImgInput(this.value)" style="width: 100%; padding: 10px 12px; border: 1px solid #D1D5DB; border-radius: 8px; font-size: 14px; margin-bottom: 6px;">
+            <option value="saffron_butter_chicken.png">Preset: Saffron Butter Chicken</option>
+            <option value="wild_mushroom_pasta.png">Preset: Wild Mushroom Pasta</option>
+            <option value="garden_burrata_bowl.png">Preset: Garden Burrata Bowl</option>
+            <option value="farfalle_pasta_ar.png">Preset: Farfalle Truffle Pasta</option>
+            <option value="olive_ember_salad.png">Preset: Olive Ember Salad</option>
+            <option value="custom">Custom Image URL...</option>
+          </select>
+          <input type="url" id="new-dish-custom-img" placeholder="https://example.com/dish.jpg" style="display: none; width: 100%; padding: 10px 12px; border: 1px solid #D1D5DB; border-radius: 8px; font-size: 14px;" />
+        </div>
+        <div style="margin-bottom: 20px;">
+          <label for="new-dish-model" style="display: block; font-size: 13px; font-weight: 600; color: #374151; margin-bottom: 6px;">3D AR Model URL (.glb / .gltf / USDZ) <span style="font-weight: 400; color: #9CA3AF;">(Optional)</span></label>
+          <input type="url" id="new-dish-model" placeholder="https://.../model.glb" style="width: 100%; padding: 10px 12px; border: 1px solid #D1D5DB; border-radius: 8px; font-size: 14px;" />
+        </div>
+        <div style="display: flex; gap: 12px; justify-content: flex-end;">
+          <button type="button" onclick="closeAddDishModal()" style="padding: 10px 18px; border: 1px solid #D1D5DB; border-radius: 30px; background: #fff; cursor: pointer; font-weight: 600; color: #374151;">Cancel</button>
+          <button type="submit" style="padding: 10px 22px; border: none; border-radius: 30px; background: #E8531A; color: #fff; cursor: pointer; font-weight: 600;">Save & Publish Dish</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

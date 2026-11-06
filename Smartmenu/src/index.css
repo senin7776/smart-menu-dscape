@@ -1,0 +1,56 @@
+/* ===========================
+   SMARTMENU REACT – Global Styles
+   =========================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --cream: #F5EFE6;
+    --cream-dark: #EDE5D8;
+    --orange: #E8531A;
+    --orange-hover: #C94310;
+    --dark: #1A1A1A;
+    --dark-2: #2C2C2C;
+    --dark-bg: #222821;
+    --dark-card: #2A2E27;
+    --dark-card2: #313530;
+    --mint: #D4E4D8;
+    --peach: #F2DDD4;
+    --text-muted: #7A7A7A;
+    --text-light: #AAAAAA;
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-sans: 'Inter', system-ui, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--cream);
+    color: var(--dark-2);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+#root {
+    min-height: 100vh;
+}
+
+/* Remove scrollbar for register modal */
+.register-modal-content::-webkit-scrollbar {
+    display: none;
+}
+
+.register-modal-content {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
